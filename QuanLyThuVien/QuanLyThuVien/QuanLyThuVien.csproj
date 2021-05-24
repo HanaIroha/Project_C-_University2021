@@ -64,12 +64,32 @@
     <Compile Include="BUS\ImageConvert.cs" />
     <Compile Include="BUS\SachBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
+    <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="DAL\DataConnection.cs" />
     <Compile Include="DTO\ChiTieuPhieuMuonDTO.cs" />
     <Compile Include="DTO\DanhMucDTO.cs" />
+    <Compile Include="DTO\DocGia.cs" />
     <Compile Include="DTO\PhieuMuonDTO.cs" />
     <Compile Include="DTO\SachDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="GUI\AdminForm\QuanLyTaiKhoan\fDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminForm\QuanLyTaiKhoan\fDoiMatKhau.Designer.cs">
+      <DependentUpon>fDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminForm\ThongKe\fThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminForm\ThongKe\fThongKe.designer.cs">
+      <DependentUpon>fThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm\fLogin.designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManagerForm\QuanLyMuonTra\fEditPhieuMuon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,11 +156,11 @@
     <Compile Include="GUI\AdminForm\QuanLySach\FormQuanLySach.Designer.cs">
       <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MainForm\MainForm.cs">
+    <Compile Include="GUI\MainForm\fMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainForm\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="GUI\MainForm\fMainForm.Designer.cs">
+      <DependentUpon>fMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManagerForm\QuanLyDocGia\fDeleteEntry.cs">
       <SubType>Form</SubType>
@@ -167,6 +187,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyThuVien.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\AdminForm\QuanLyTaiKhoan\fDoiMatKhau.resx">
+      <DependentUpon>fDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminForm\ThongKe\fThongKe.resx">
+      <DependentUpon>fThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\QuanLyMuonTra\fEditPhieuMuon.resx">
       <DependentUpon>fEditPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,8 +229,8 @@
     <EmbeddedResource Include="GUI\AdminForm\QuanLySach\FormQuanLySach.resx">
       <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainForm\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\MainForm\fMainForm.resx">
+      <DependentUpon>fMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManagerForm\QuanLyDocGia\fDeleteEntry.resx">
       <DependentUpon>fDeleteEntry.cs</DependentUpon>

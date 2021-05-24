@@ -1,7 +1,7 @@
 ﻿
-namespace QuanLyThuVien
+namespace QuanLyThuVien.GUI.MainForm
 {
-    partial class formLogin
+    partial class fMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,19 @@ namespace QuanLyThuVien
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btn_quanLyTaiKhoan = new FontAwesome.Sharp.IconButton();
             this.btn_thongKe = new FontAwesome.Sharp.IconButton();
-            this.btn_quanLyMuonTra = new FontAwesome.Sharp.IconButton();
             this.btn_baoTriDocGia = new FontAwesome.Sharp.IconButton();
+            this.btn_quanLyMuonTra = new FontAwesome.Sharp.IconButton();
             this.btn_quanLySach = new FontAwesome.Sharp.IconButton();
+            this.btn_xemSach = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btn_Home = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.panelStatus = new System.Windows.Forms.Panel();
+            this.IconUser = new FontAwesome.Sharp.IconButton();
             this.btn_maximize = new FontAwesome.Sharp.IconButton();
             this.btn_exit = new FontAwesome.Sharp.IconButton();
             this.btn_minimize = new FontAwesome.Sharp.IconButton();
@@ -48,7 +50,8 @@ namespace QuanLyThuVien
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_xemSach = new FontAwesome.Sharp.IconButton();
+            this.btn_profile = new FontAwesome.Sharp.IconButton();
+            this.btn_logout = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
@@ -123,30 +126,6 @@ namespace QuanLyThuVien
             this.btn_thongKe.UseVisualStyleBackColor = false;
             this.btn_thongKe.Click += new System.EventHandler(this.btn_thongKe_Click);
             // 
-            // btn_quanLyMuonTra
-            // 
-            this.btn_quanLyMuonTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
-            this.btn_quanLyMuonTra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_quanLyMuonTra.FlatAppearance.BorderSize = 0;
-            this.btn_quanLyMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_quanLyMuonTra.Font = new System.Drawing.Font("UVN Gio May", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_quanLyMuonTra.ForeColor = System.Drawing.Color.White;
-            this.btn_quanLyMuonTra.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.btn_quanLyMuonTra.IconColor = System.Drawing.Color.White;
-            this.btn_quanLyMuonTra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_quanLyMuonTra.IconSize = 40;
-            this.btn_quanLyMuonTra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_quanLyMuonTra.Location = new System.Drawing.Point(0, 260);
-            this.btn_quanLyMuonTra.Name = "btn_quanLyMuonTra";
-            this.btn_quanLyMuonTra.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btn_quanLyMuonTra.Size = new System.Drawing.Size(220, 60);
-            this.btn_quanLyMuonTra.TabIndex = 4;
-            this.btn_quanLyMuonTra.Text = "Quản lý mượn/trả";
-            this.btn_quanLyMuonTra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_quanLyMuonTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_quanLyMuonTra.UseVisualStyleBackColor = false;
-            this.btn_quanLyMuonTra.Click += new System.EventHandler(this.btn_quanLyMuonTra_Click);
-            // 
             // btn_baoTriDocGia
             // 
             this.btn_baoTriDocGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
@@ -171,6 +150,30 @@ namespace QuanLyThuVien
             this.btn_baoTriDocGia.UseVisualStyleBackColor = false;
             this.btn_baoTriDocGia.Click += new System.EventHandler(this.btn_baoTriDocGia_Click);
             // 
+            // btn_quanLyMuonTra
+            // 
+            this.btn_quanLyMuonTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
+            this.btn_quanLyMuonTra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_quanLyMuonTra.FlatAppearance.BorderSize = 0;
+            this.btn_quanLyMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_quanLyMuonTra.Font = new System.Drawing.Font("UVN Gio May", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_quanLyMuonTra.ForeColor = System.Drawing.Color.White;
+            this.btn_quanLyMuonTra.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btn_quanLyMuonTra.IconColor = System.Drawing.Color.White;
+            this.btn_quanLyMuonTra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_quanLyMuonTra.IconSize = 40;
+            this.btn_quanLyMuonTra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_quanLyMuonTra.Location = new System.Drawing.Point(0, 260);
+            this.btn_quanLyMuonTra.Name = "btn_quanLyMuonTra";
+            this.btn_quanLyMuonTra.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btn_quanLyMuonTra.Size = new System.Drawing.Size(220, 60);
+            this.btn_quanLyMuonTra.TabIndex = 4;
+            this.btn_quanLyMuonTra.Text = "Quản lý mượn/trả";
+            this.btn_quanLyMuonTra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_quanLyMuonTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_quanLyMuonTra.UseVisualStyleBackColor = false;
+            this.btn_quanLyMuonTra.Click += new System.EventHandler(this.btn_quanLyMuonTra_Click);
+            // 
             // btn_quanLySach
             // 
             this.btn_quanLySach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
@@ -194,6 +197,30 @@ namespace QuanLyThuVien
             this.btn_quanLySach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_quanLySach.UseVisualStyleBackColor = false;
             this.btn_quanLySach.Click += new System.EventHandler(this.btn_quanLySach_Click);
+            // 
+            // btn_xemSach
+            // 
+            this.btn_xemSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
+            this.btn_xemSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_xemSach.FlatAppearance.BorderSize = 0;
+            this.btn_xemSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xemSach.Font = new System.Drawing.Font("UVN Gio May", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xemSach.ForeColor = System.Drawing.Color.White;
+            this.btn_xemSach.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btn_xemSach.IconColor = System.Drawing.Color.White;
+            this.btn_xemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_xemSach.IconSize = 40;
+            this.btn_xemSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xemSach.Location = new System.Drawing.Point(0, 140);
+            this.btn_xemSach.Name = "btn_xemSach";
+            this.btn_xemSach.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btn_xemSach.Size = new System.Drawing.Size(220, 60);
+            this.btn_xemSach.TabIndex = 7;
+            this.btn_xemSach.Text = "Xem sách";
+            this.btn_xemSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xemSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_xemSach.UseVisualStyleBackColor = false;
+            this.btn_xemSach.Click += new System.EventHandler(this.btn_xemSach_Click);
             // 
             // panelLogo
             // 
@@ -230,14 +257,32 @@ namespace QuanLyThuVien
             // 
             // panelStatus
             // 
+            this.panelStatus.Controls.Add(this.IconUser);
             this.panelStatus.Controls.Add(this.btn_maximize);
             this.panelStatus.Controls.Add(this.btn_exit);
             this.panelStatus.Controls.Add(this.btn_minimize);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelStatus.Location = new System.Drawing.Point(831, 0);
+            this.panelStatus.Location = new System.Drawing.Point(774, 0);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(133, 75);
+            this.panelStatus.Size = new System.Drawing.Size(190, 75);
             this.panelStatus.TabIndex = 6;
+            // 
+            // IconUser
+            // 
+            this.IconUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IconUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconUser.ForeColor = System.Drawing.Color.White;
+            this.IconUser.IconChar = FontAwesome.Sharp.IconChar.Circle;
+            this.IconUser.IconColor = System.Drawing.Color.White;
+            this.IconUser.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.IconUser.Location = new System.Drawing.Point(3, 27);
+            this.IconUser.Name = "IconUser";
+            this.IconUser.Size = new System.Drawing.Size(182, 48);
+            this.IconUser.TabIndex = 6;
+            this.IconUser.Text = "Phạm Minh Tư";
+            this.IconUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.IconUser.UseVisualStyleBackColor = true;
+            this.IconUser.Click += new System.EventHandler(this.IconUser_Click);
             // 
             // btn_maximize
             // 
@@ -247,7 +292,7 @@ namespace QuanLyThuVien
             this.btn_maximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_maximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_maximize.IconSize = 25;
-            this.btn_maximize.Location = new System.Drawing.Point(83, 3);
+            this.btn_maximize.Location = new System.Drawing.Point(138, 3);
             this.btn_maximize.Name = "btn_maximize";
             this.btn_maximize.Size = new System.Drawing.Size(21, 18);
             this.btn_maximize.TabIndex = 4;
@@ -262,7 +307,7 @@ namespace QuanLyThuVien
             this.btn_exit.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_exit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_exit.IconSize = 25;
-            this.btn_exit.Location = new System.Drawing.Point(109, 3);
+            this.btn_exit.Location = new System.Drawing.Point(164, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(21, 18);
             this.btn_exit.TabIndex = 3;
@@ -277,7 +322,7 @@ namespace QuanLyThuVien
             this.btn_minimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btn_minimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_minimize.IconSize = 25;
-            this.btn_minimize.Location = new System.Drawing.Point(54, 3);
+            this.btn_minimize.Location = new System.Drawing.Point(109, 3);
             this.btn_minimize.Name = "btn_minimize";
             this.btn_minimize.Size = new System.Drawing.Size(21, 18);
             this.btn_minimize.TabIndex = 5;
@@ -291,9 +336,9 @@ namespace QuanLyThuVien
             this.lbl_currentChildForm.ForeColor = System.Drawing.Color.White;
             this.lbl_currentChildForm.Location = new System.Drawing.Point(56, 36);
             this.lbl_currentChildForm.Name = "lbl_currentChildForm";
-            this.lbl_currentChildForm.Size = new System.Drawing.Size(56, 22);
+            this.lbl_currentChildForm.Size = new System.Drawing.Size(89, 22);
             this.lbl_currentChildForm.TabIndex = 1;
-            this.lbl_currentChildForm.Text = "Home";
+            this.lbl_currentChildForm.Text = "Trang chủ";
             // 
             // icon_currentChildForm
             // 
@@ -341,41 +386,55 @@ namespace QuanLyThuVien
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_xemSach
+            // btn_profile
             // 
-            this.btn_xemSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
-            this.btn_xemSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_xemSach.FlatAppearance.BorderSize = 0;
-            this.btn_xemSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_xemSach.Font = new System.Drawing.Font("UVN Gio May", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xemSach.ForeColor = System.Drawing.Color.White;
-            this.btn_xemSach.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.btn_xemSach.IconColor = System.Drawing.Color.White;
-            this.btn_xemSach.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_xemSach.IconSize = 40;
-            this.btn_xemSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xemSach.Location = new System.Drawing.Point(0, 140);
-            this.btn_xemSach.Name = "btn_xemSach";
-            this.btn_xemSach.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btn_xemSach.Size = new System.Drawing.Size(220, 60);
-            this.btn_xemSach.TabIndex = 7;
-            this.btn_xemSach.Text = "Xem sách";
-            this.btn_xemSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xemSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_xemSach.UseVisualStyleBackColor = false;
-            this.btn_xemSach.Click += new System.EventHandler(this.btn_xemSach_Click);
+            this.btn_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(93)))), ((int)(((byte)(160)))));
+            this.btn_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_profile.ForeColor = System.Drawing.Color.White;
+            this.btn_profile.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_profile.IconColor = System.Drawing.Color.Black;
+            this.btn_profile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_profile.Location = new System.Drawing.Point(998, 76);
+            this.btn_profile.Name = "btn_profile";
+            this.btn_profile.Size = new System.Drawing.Size(181, 34);
+            this.btn_profile.TabIndex = 0;
+            this.btn_profile.Text = "Thông tin tài khoản";
+            this.btn_profile.UseVisualStyleBackColor = false;
+            this.btn_profile.Visible = false;
+            this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
             // 
-            // formLogin
+            // btn_logout
+            // 
+            this.btn_logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(93)))), ((int)(((byte)(160)))));
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.ForeColor = System.Drawing.Color.White;
+            this.btn_logout.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_logout.IconColor = System.Drawing.Color.Black;
+            this.btn_logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_logout.Location = new System.Drawing.Point(998, 110);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(181, 34);
+            this.btn_logout.TabIndex = 1;
+            this.btn_logout.Text = "Đăng xuất";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Visible = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // fMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1184, 611);
+            this.Controls.Add(this.btn_profile);
+            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Name = "formLogin";
+            this.Name = "fMainForm";
             this.Text = "z";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -411,6 +470,9 @@ namespace QuanLyThuVien
         private FontAwesome.Sharp.IconButton btn_exit;
         private System.Windows.Forms.Panel panelStatus;
         private FontAwesome.Sharp.IconButton btn_xemSach;
+        private FontAwesome.Sharp.IconButton IconUser;
+        private FontAwesome.Sharp.IconButton btn_profile;
+        private FontAwesome.Sharp.IconButton btn_logout;
     }
 }
 

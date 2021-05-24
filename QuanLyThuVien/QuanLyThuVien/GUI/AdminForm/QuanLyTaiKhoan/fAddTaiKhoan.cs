@@ -16,6 +16,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
     public partial class fAddTaiKhoan : Form
     {
         fQuanLyTaiKhoan QuanLyTaiKhoan;
+        bool hasPicture = false;
         public fAddTaiKhoan()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
         public void prepare()
         {
             rd_KichHoat.Checked = true;
+            openFileDialog1.FileName = null;
         }
 
         private void btn_changeImage_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 {
                     img = Image.FromFile(openFileDialog1.FileName);
                     lbl_image.Image = img;
+                    hasPicture = true;
                 }
                 catch (FileNotFoundException x)
                 {
@@ -77,7 +80,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                     txt_TenNguoiDung.Focus();
                     throw new Exception("Tên người dùng không được bỏ trống");
                 }
-                if (openFileDialog1.FileName == null)
+                if (!hasPicture)
                 {
                     throw new Exception("Chưa có ảnh đại diện");
                 }

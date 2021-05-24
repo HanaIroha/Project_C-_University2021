@@ -2,7 +2,6 @@ C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.formLogin.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
@@ -27,3 +26,7 @@ C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra.fQuanLyMuonTra.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.ManagerForm.XemSach.fXemSach.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\bin\Debug\FastMember.dll
+C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.AdminForm.ThongKe.fThongKe.resources
+C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan.fDoiMatKhau.resources
+C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.MainForm.fLogin.resources
+C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.MainForm.fMainForm.resources

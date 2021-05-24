@@ -72,16 +72,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
         {
             try
             {
-                if (txt_TenTaiKhoan.Text.Equals(""))
-                {
-                    txt_TenTaiKhoan.Focus();
-                    throw new Exception("Tên đăng nhập không được bỏ trống");
-                }
-                if (txt_MatKhau.Text.Equals(""))
-                {
-                    txt_MatKhau.Focus();
-                    throw new Exception("Mật khẩu không được bỏ trống");
-                }
                 if (txt_TenNguoiDung.Text.Equals(""))
                 {
                     txt_TenNguoiDung.Focus();

@@ -11,18 +11,23 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan;
 using QuanLyThuVien.GUI.AdminForm.QuanLySach;
+using QuanLyThuVien.GUI.AdminForm.ThongKe;
 using QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra;
 using QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia;
 using QuanLyThuVien.GUI.ManagerForm.XemSach;
+using QuanLyThuVien.DTO;
+using QuanLyThuVien.BUS;
 
-namespace QuanLyThuVien
+namespace QuanLyThuVien.GUI.MainForm
 {
-    public partial class formLogin : Form
+    public partial class fMainForm : Form
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public formLogin()
+        TaiKhoanDTO tk;
+        bool userMenu = false;
+        public fMainForm()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -32,6 +37,30 @@ namespace QuanLyThuVien
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+
+        public fMainForm(string tenDangNhap)
+        {
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderBtn);
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            tk = new TaiKhoanBUS().GetTaiKhoan(tenDangNhap);
+            IconUser.Text = tk.TenNguoiDung;
+            if(tk.LoaiTaiKhoan == 1)
+            {
+                btn_xemSach.Visible = false;
+            }
+            else
+            {
+                btn_quanLySach.Visible = false;
+                btn_quanLyTaiKhoan.Visible = false;
+                btn_thongKe.Visible = false;
+            }
         }
 
         private void OpenChildForm(Form childForm)
@@ -126,6 +155,7 @@ namespace QuanLyThuVien
         private void btn_thongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new fThongKe());
         }
 
         private void btn_quanLyTaiKhoan_Click(object sender, EventArgs e)
@@ -187,5 +217,35 @@ namespace QuanLyThuVien
             WindowState = FormWindowState.Minimized;
         }
 
+        private void IconUser_Click(object sender, EventArgs e)
+        {
+            if (!userMenu)
+            {
+                btn_profile.Visible = true;
+                btn_logout.Visible = true;
+                userMenu = true;
+            }
+            else
+            {
+                btn_profile.Visible = false;
+                btn_logout.Visible = false;
+                userMenu = false;
+            }
+        }
+
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau(tk.TenDangNhap);
+            f.ShowDialog();
+            btn_profile.Visible = false;
+            btn_logout.Visible = false;
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            btn_profile.Visible = false;
+            btn_logout.Visible = false;
+            this.Close();
+        }
     }
 }

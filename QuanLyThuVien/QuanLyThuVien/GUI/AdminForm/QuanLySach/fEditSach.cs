@@ -109,7 +109,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                 }
                 if (lbl_image.Image == null)
                 {
-                    throw new Exception("Chưa có ảnh đại diện");
+                    throw new Exception("Chưa có ảnh");
                 }
                 QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
                 var sach = db.SACHes.Single(s => s.MaS == MaSach);

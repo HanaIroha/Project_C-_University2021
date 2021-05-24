@@ -46,6 +46,14 @@ namespace QuanLyThuVien.BUS
             return tk;
         }
 
+        public bool CheckDangNhap(string TenTK, string MatKhau)
+        {
+            string sql = "Select * from dbo.TAIKHOAN where TenDangNhap = '" + TenTK + "' AND MatKhau = '"+ MatKhau + "' AND TinhTrang = '1'";
+            DataTable dt = new DataTable();
+            dt = dataConnect.GetTable(sql);
+            return dt.Rows.Count > 0 ? true : false;
+        }
+
         public void AddTaiKhoan(byte[] AnhDaiDien, string TenDanhNhap, string MatKhau, string TenNguoiDung, int LoaiTaiKhoan, bool TinhTrang)
         {
             string sql = "Insert into dbo.TAIKHOAN values(@image,'" + TenDanhNhap + "','" + MatKhau + "',N'" + TenNguoiDung + "','" + LoaiTaiKhoan + "','" + TinhTrang + "')";
@@ -61,6 +69,12 @@ namespace QuanLyThuVien.BUS
         public void DeleteTaiKhoan(string TenTK)
         {
             string sql = "Delete from dbo.TAIKHOAN where TenDangNhap='" + TenTK + "'";
+            dataConnect.ExecuteNonQuery(sql);
+        }
+
+        public void UpdateMatKhau(string TenDangNhap, string MatKhau)
+        {
+            string sql = "Update dbo.TAIKHOAN SET MatKhau='" + MatKhau + "' where TenDangNhap = '" + TenDangNhap + "'";
             dataConnect.ExecuteNonQuery(sql);
         }
     }

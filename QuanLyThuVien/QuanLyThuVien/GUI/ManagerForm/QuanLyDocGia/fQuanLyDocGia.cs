@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.IO;
 using OfficeExcel = Microsoft.Office.Interop.Excel;
 using FastMember;
+using QuanLyThuVien.DTO;
 
 namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
 {
@@ -41,13 +42,6 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             loadCombo();
             cbb_ngay.SelectedIndex = 0;
             cbb_search.SelectedIndex = 0;
-        }
-
-        public class DocGia
-        {
-            public string hoTen { get; set; }
-            public string maSV { get; set; }
-            public string thoiGian { get; set; }
         }
 
         private void loadCombo()
@@ -422,8 +416,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             //excelWorkSheet.Name = ds.TableName;
 
             //Tao cot
-            for (int i = 0; i < ds.Columns.Count; i++)
-                excelWorkSheet.Cells[inHeaderLength + 1, i + 1] = ds.Columns[i].ColumnName.ToUpper();
+            excelWorkSheet.Cells[inHeaderLength + 1, 1] = "Họ và tên";
+            excelWorkSheet.Cells[inHeaderLength + 1, 2] = "Mã sinh viên";
+            excelWorkSheet.Cells[inHeaderLength + 1, 3] = "Thời gian đến";
 
             //Tao dong
             for (int m = 0; m < ds.Rows.Count; m++)

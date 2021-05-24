@@ -33,6 +33,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbb_search = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
             this.AnhDaiDien = new System.Windows.Forms.DataGridViewImageColumn();
@@ -42,7 +43,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.LoaiTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbb_search = new System.Windows.Forms.ComboBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
@@ -65,6 +65,17 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 56);
             this.panel1.TabIndex = 2;
+            // 
+            // cbb_search
+            // 
+            this.cbb_search.FormattingEnabled = true;
+            this.cbb_search.Items.AddRange(new object[] {
+            "Tên đăng nhập",
+            "Tên người dùng"});
+            this.cbb_search.Location = new System.Drawing.Point(526, 19);
+            this.cbb_search.Name = "cbb_search";
+            this.cbb_search.Size = new System.Drawing.Size(98, 21);
+            this.cbb_search.TabIndex = 5;
             // 
             // txtSearch
             // 
@@ -171,17 +182,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.ID.Name = "ID";
             this.ID.Visible = false;
             // 
-            // cbb_search
-            // 
-            this.cbb_search.FormattingEnabled = true;
-            this.cbb_search.Items.AddRange(new object[] {
-            "Tên đăng nhập",
-            "Tên người dùng"});
-            this.cbb_search.Location = new System.Drawing.Point(526, 19);
-            this.cbb_search.Name = "cbb_search";
-            this.cbb_search.Size = new System.Drawing.Size(98, 21);
-            this.cbb_search.TabIndex = 5;
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,7 +270,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.Controls.Add(this.dgvTaiKhoan);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyTaiKhoan";
-            this.Text = "Danh mục";
+            this.Text = "Quản lý tài khoản";
             this.Load += new System.EventHandler(this.fQuanLyTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

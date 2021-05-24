@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
 {
-    partial class fEditTaiKhoan
+    partial class fDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,13 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txt_TenNguoiDung = new System.Windows.Forms.TextBox();
             this.txt_MatKhau = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.rd_KichHoat = new System.Windows.Forms.RadioButton();
-            this.rd_VoHieuHoa = new System.Windows.Forms.RadioButton();
+            this.txt_matKhauMoi = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btn_save = new FontAwesome.Sharp.IconButton();
             this.btn_cancel = new FontAwesome.Sharp.IconButton();
-            this.btn_changeImage = new FontAwesome.Sharp.IconButton();
             this.lbl_image = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).BeginInit();
             this.SuspendLayout();
@@ -112,22 +110,12 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label5.Text = "Tên người dùng";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(551, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Tình trạng";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txt_TenNguoiDung
             // 
             this.txt_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenNguoiDung.Location = new System.Drawing.Point(554, 109);
             this.txt_TenNguoiDung.Name = "txt_TenNguoiDung";
+            this.txt_TenNguoiDung.ReadOnly = true;
             this.txt_TenNguoiDung.Size = new System.Drawing.Size(251, 26);
             this.txt_TenNguoiDung.TabIndex = 14;
             // 
@@ -136,7 +124,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.txt_MatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhau.Location = new System.Drawing.Point(254, 173);
             this.txt_MatKhau.Name = "txt_MatKhau";
-            this.txt_MatKhau.ReadOnly = true;
             this.txt_MatKhau.Size = new System.Drawing.Size(251, 26);
             this.txt_MatKhau.TabIndex = 15;
             this.txt_MatKhau.UseSystemPasswordChar = true;
@@ -145,27 +132,25 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // rd_KichHoat
+            // txt_matKhauMoi
             // 
-            this.rd_KichHoat.AutoSize = true;
-            this.rd_KichHoat.Location = new System.Drawing.Point(554, 179);
-            this.rd_KichHoat.Name = "rd_KichHoat";
-            this.rd_KichHoat.Size = new System.Drawing.Size(72, 17);
-            this.rd_KichHoat.TabIndex = 24;
-            this.rd_KichHoat.TabStop = true;
-            this.rd_KichHoat.Text = "Kích hoạt";
-            this.rd_KichHoat.UseVisualStyleBackColor = true;
+            this.txt_matKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_matKhauMoi.Location = new System.Drawing.Point(554, 173);
+            this.txt_matKhauMoi.Name = "txt_matKhauMoi";
+            this.txt_matKhauMoi.Size = new System.Drawing.Size(251, 26);
+            this.txt_matKhauMoi.TabIndex = 25;
+            this.txt_matKhauMoi.UseSystemPasswordChar = true;
             // 
-            // rd_VoHieuHoa
+            // label6
             // 
-            this.rd_VoHieuHoa.AutoSize = true;
-            this.rd_VoHieuHoa.Location = new System.Drawing.Point(690, 179);
-            this.rd_VoHieuHoa.Name = "rd_VoHieuHoa";
-            this.rd_VoHieuHoa.Size = new System.Drawing.Size(82, 17);
-            this.rd_VoHieuHoa.TabIndex = 25;
-            this.rd_VoHieuHoa.TabStop = true;
-            this.rd_VoHieuHoa.Text = "Vô hiệu hoá";
-            this.rd_VoHieuHoa.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(551, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 16);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Mật khẩu mới";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_save
             // 
@@ -177,11 +162,11 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.btn_save.IconColor = System.Drawing.Color.DimGray;
             this.btn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_save.IconSize = 35;
-            this.btn_save.Location = new System.Drawing.Point(526, 276);
+            this.btn_save.Location = new System.Drawing.Point(488, 265);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(116, 34);
+            this.btn_save.Size = new System.Drawing.Size(135, 34);
             this.btn_save.TabIndex = 23;
-            this.btn_save.Text = "Lưu";
+            this.btn_save.Text = "Đổi mật khẩu";
             this.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -196,33 +181,14 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.btn_cancel.IconColor = System.Drawing.Color.DimGray;
             this.btn_cancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_cancel.IconSize = 35;
-            this.btn_cancel.Location = new System.Drawing.Point(690, 276);
+            this.btn_cancel.Location = new System.Drawing.Point(659, 265);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(116, 34);
+            this.btn_cancel.Size = new System.Drawing.Size(135, 34);
             this.btn_cancel.TabIndex = 22;
             this.btn_cancel.Text = "Huỷ";
             this.btn_cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // btn_changeImage
-            // 
-            this.btn_changeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.btn_changeImage.FlatAppearance.BorderSize = 0;
-            this.btn_changeImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_changeImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_changeImage.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.btn_changeImage.IconColor = System.Drawing.Color.DimGray;
-            this.btn_changeImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_changeImage.IconSize = 35;
-            this.btn_changeImage.Location = new System.Drawing.Point(50, 252);
-            this.btn_changeImage.Name = "btn_changeImage";
-            this.btn_changeImage.Size = new System.Drawing.Size(116, 34);
-            this.btn_changeImage.TabIndex = 21;
-            this.btn_changeImage.Text = "Thay ảnh";
-            this.btn_changeImage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_changeImage.UseVisualStyleBackColor = false;
-            this.btn_changeImage.Click += new System.EventHandler(this.btn_changeImage_Click);
             // 
             // lbl_image
             // 
@@ -235,21 +201,19 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.lbl_image.TabIndex = 13;
             this.lbl_image.TabStop = false;
             // 
-            // fEditTaiKhoan
+            // fDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(212)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(838, 346);
-            this.Controls.Add(this.rd_VoHieuHoa);
-            this.Controls.Add(this.rd_KichHoat);
+            this.ClientSize = new System.Drawing.Size(838, 328);
+            this.Controls.Add(this.txt_matKhauMoi);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_changeImage);
             this.Controls.Add(this.txt_MatKhau);
             this.Controls.Add(this.txt_TenNguoiDung);
             this.Controls.Add(this.lbl_image);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -258,7 +222,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "fEditTaiKhoan";
+            this.Name = "fDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddSach";
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).EndInit();
@@ -275,15 +239,13 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox lbl_image;
         private System.Windows.Forms.TextBox txt_TenNguoiDung;
         private System.Windows.Forms.TextBox txt_MatKhau;
-        private FontAwesome.Sharp.IconButton btn_changeImage;
         private FontAwesome.Sharp.IconButton btn_cancel;
         private FontAwesome.Sharp.IconButton btn_save;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.RadioButton rd_KichHoat;
-        private System.Windows.Forms.RadioButton rd_VoHieuHoa;
+        private System.Windows.Forms.TextBox txt_matKhauMoi;
+        private System.Windows.Forms.Label label6;
     }
 }

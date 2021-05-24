@@ -39,7 +39,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                     (string)a.ItemArray[3],
                     (string)a.ItemArray[4],
                     Int32.Parse(a.ItemArray[5].ToString()) == 1 ? "Người quản trị" : "Nhân viên",
-                    (bool)a.ItemArray[6] ? "Kích hoạt" : "Vô hiẹu hoá",
+                    (bool)a.ItemArray[6] ? "Kích hoạt" : "Vô hiệu hoá",
                     Int32.Parse(a.ItemArray[5].ToString())
                     );
             }

@@ -16,6 +16,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
     public partial class fAddSach : Form
     {
         fQuanLySach QuanLySach;
+        bool hasPicture = false;
         public fAddSach()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             cbb_danhMuc.DataSource = new DanhMucBUS().GetDanhMuc();
             cbb_danhMuc.DisplayMember = "TenDanhMuc";
             cbb_danhMuc.ValueMember = "MaDanhMuc";
+            openFileDialog1.FileName = null;
         }
 
         private void btn_changeImage_Click(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                 {
                     img = Image.FromFile(openFileDialog1.FileName);
                     lbl_image.Image = img;
+                    hasPicture = true ;
                 }
                 catch (FileNotFoundException x)
                 {
@@ -93,9 +96,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                     txt_giaMuon.Focus();
                     throw new Exception("Giá mượn không được bỏ trống");
                 }
-                if (openFileDialog1.FileName == null)
+                if (!hasPicture)
                 {
-                    throw new Exception("Chưa có ảnh đại diện");
+                    throw new Exception("Chưa có ảnh");
                 }
                 //int sl = new SachBUS().GetCountItem(txt_tenSach.Text);
                 //if (sl > 0)
