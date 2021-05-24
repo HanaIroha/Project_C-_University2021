@@ -32,8 +32,10 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             {
                 int sl = 0;
                 if (cbb_ngayxoa.SelectedIndex == 0)
-                    sl = 7;
+                    sl = 3;
                 else if (cbb_ngayxoa.SelectedIndex == 1)
+                    sl = 7;
+                else if (cbb_ngayxoa.SelectedIndex == 2)
                     sl = 30;
                 DirectoryInfo d = new DirectoryInfo(@"LichSuDocGia");
                 FileInfo[] Files = d.GetFiles("*.txt");

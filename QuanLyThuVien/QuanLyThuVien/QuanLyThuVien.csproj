@@ -63,8 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ChiTietPhieuMuonBUS.cs" />
     <Compile Include="BUS\DanhMucBUS.cs" />
     <Compile Include="BUS\ImageConvert.cs" />
+    <Compile Include="BUS\PhieuMuonBUS.cs" />
     <Compile Include="BUS\SachBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />

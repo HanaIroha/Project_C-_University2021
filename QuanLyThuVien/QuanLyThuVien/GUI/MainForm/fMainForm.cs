@@ -74,6 +74,7 @@ namespace QuanLyThuVien.GUI.MainForm
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Clear();
             panelDesktop.Controls.Add(childForm);
             panelDesktop.Tag = childForm;
             childForm.BringToFront();

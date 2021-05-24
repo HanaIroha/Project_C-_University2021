@@ -39,6 +39,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             // 
             this.cbb_ngayxoa.FormattingEnabled = true;
             this.cbb_ngayxoa.Items.AddRange(new object[] {
+            "3 Lưu trữ cuối",
             "7 Lưu trữ cuối",
             "30 Lưu trữ cuối",
             "Toàn bộ (Trừ hôm nay)"});
