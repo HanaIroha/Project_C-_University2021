@@ -105,7 +105,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.cbb_ngayxoa);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDeleteEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDeleteEntry";

@@ -15,6 +15,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
 {
     public partial class fEditTaiKhoan : Form
     {
+        TaiKhoanDTO tk;
         fQuanLyTaiKhoan QuanLyTaiKhoan;
         string TenTK;
         public fEditTaiKhoan()
@@ -31,10 +32,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
 
         public void prepare()
         {
-            TaiKhoanDTO tk = new TaiKhoanBUS().GetTaiKhoan(TenTK);
+            tk = new TaiKhoanBUS().GetTaiKhoan(TenTK);
             txt_TenTaiKhoan.Text = tk.TenDangNhap;
             txt_TenNguoiDung.Text = tk.TenNguoiDung;
-            txt_MatKhau.Text = tk.MatKhau;
             if (tk.TinhTrang)
                 rd_KichHoat.Checked = true;
             else
@@ -85,7 +85,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 {
                     new TaiKhoanBUS().UpdateTaiKhoan(new ImageConvert().ConvertImageToBytes(lbl_image.Image),
                         txt_TenTaiKhoan.Text,
-                        txt_MatKhau.Text,
+                        tk.MatKhau,
                         txt_TenNguoiDung.Text,
                         rd_KichHoat.Checked ? true : false);
                     QuanLyTaiKhoan.prepare();
@@ -93,6 +93,19 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 }
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi");
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new TaiKhoanBUS().ResetMatKhau(txt_TenTaiKhoan.Text);
+                MessageBox.Show("Khôi phục mật khẩu thành công thành 123");
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi");
             }

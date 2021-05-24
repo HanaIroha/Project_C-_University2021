@@ -33,11 +33,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.txt_TenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TenNguoiDung = new System.Windows.Forms.TextBox();
-            this.txt_MatKhau = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btn_save = new FontAwesome.Sharp.IconButton();
             this.btn_cancel = new FontAwesome.Sharp.IconButton();
@@ -89,17 +87,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label3.Text = "Tên đăng nhập";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(251, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mật khẩu";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -115,7 +102,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(551, 149);
+            this.label7.Location = new System.Drawing.Point(251, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 9;
@@ -129,15 +116,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.txt_TenNguoiDung.Name = "txt_TenNguoiDung";
             this.txt_TenNguoiDung.Size = new System.Drawing.Size(251, 26);
             this.txt_TenNguoiDung.TabIndex = 14;
-            // 
-            // txt_MatKhau
-            // 
-            this.txt_MatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MatKhau.Location = new System.Drawing.Point(254, 173);
-            this.txt_MatKhau.Name = "txt_MatKhau";
-            this.txt_MatKhau.Size = new System.Drawing.Size(251, 26);
-            this.txt_MatKhau.TabIndex = 15;
-            this.txt_MatKhau.UseSystemPasswordChar = true;
             // 
             // openFileDialog1
             // 
@@ -214,7 +192,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // rd_KichHoat
             // 
             this.rd_KichHoat.AutoSize = true;
-            this.rd_KichHoat.Location = new System.Drawing.Point(554, 179);
+            this.rd_KichHoat.Location = new System.Drawing.Point(254, 186);
             this.rd_KichHoat.Name = "rd_KichHoat";
             this.rd_KichHoat.Size = new System.Drawing.Size(72, 17);
             this.rd_KichHoat.TabIndex = 24;
@@ -225,7 +203,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // rd_VoHieuHoa
             // 
             this.rd_VoHieuHoa.AutoSize = true;
-            this.rd_VoHieuHoa.Location = new System.Drawing.Point(690, 179);
+            this.rd_VoHieuHoa.Location = new System.Drawing.Point(390, 186);
             this.rd_VoHieuHoa.Name = "rd_VoHieuHoa";
             this.rd_VoHieuHoa.Size = new System.Drawing.Size(82, 17);
             this.rd_VoHieuHoa.TabIndex = 25;
@@ -244,21 +222,19 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_changeImage);
-            this.Controls.Add(this.txt_MatKhau);
             this.Controls.Add(this.txt_TenNguoiDung);
             this.Controls.Add(this.lbl_image);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_TenTaiKhoan);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "fAddTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fAddSach";
+            this.Text = "fAddTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,12 +247,10 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
         private System.Windows.Forms.TextBox txt_TenTaiKhoan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox lbl_image;
         private System.Windows.Forms.TextBox txt_TenNguoiDung;
-        private System.Windows.Forms.TextBox txt_MatKhau;
         private FontAwesome.Sharp.IconButton btn_changeImage;
         private FontAwesome.Sharp.IconButton btn_cancel;
         private FontAwesome.Sharp.IconButton btn_save;

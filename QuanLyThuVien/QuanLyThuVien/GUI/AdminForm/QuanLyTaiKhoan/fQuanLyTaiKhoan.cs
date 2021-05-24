@@ -27,6 +27,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             loadData(new TaiKhoanBUS().GetTableTaiKhoan());
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
+            cbb_search.SelectedIndex = 0;
         }
 
         public void loadData(DataTable dt)
@@ -43,6 +44,8 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                     Int32.Parse(a.ItemArray[5].ToString())
                     );
             }
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -59,15 +62,25 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (index < 0)
+            try
             {
-                MessageBox.Show("Vui lòng chọn đối tượng cần xoá!");
+                if (index < 0)
+                {
+                    MessageBox.Show("Vui lòng chọn đối tượng cần xoá!");
+                }
+                else
+                {
+                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá tài khoản "+ dgvTaiKhoan.Rows[index].Cells[1].Value.ToString() + " không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                    {
+                        new TaiKhoanBUS().DeleteTaiKhoan(dgvTaiKhoan.Rows[index].Cells[1].Value.ToString());
+                        index = -1;
+                        prepare();
+                    }
+                }
             }
-            else
+            catch(Exception ex)
             {
-                new TaiKhoanBUS().DeleteTaiKhoan(dgvTaiKhoan.Rows[index].Cells[1].Value.ToString());
-                index = -1;
-                prepare();
+                MessageBox.Show(ex.Message, "Lỗi");
             }
         }
 

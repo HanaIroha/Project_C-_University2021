@@ -59,6 +59,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // 
             // txt_TenTaiKhoan
             // 
+            this.txt_TenTaiKhoan.Enabled = false;
             this.txt_TenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenTaiKhoan.Location = new System.Drawing.Point(254, 109);
             this.txt_TenTaiKhoan.Name = "txt_TenTaiKhoan";
@@ -112,6 +113,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // 
             // txt_TenNguoiDung
             // 
+            this.txt_TenNguoiDung.Enabled = false;
             this.txt_TenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenNguoiDung.Location = new System.Drawing.Point(554, 109);
             this.txt_TenNguoiDung.Name = "txt_TenNguoiDung";
@@ -220,11 +222,11 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_TenTaiKhoan);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "fDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fAddSach";
+            this.Text = "fDoiMatKhau";
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

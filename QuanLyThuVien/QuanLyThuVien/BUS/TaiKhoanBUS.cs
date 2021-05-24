@@ -77,5 +77,11 @@ namespace QuanLyThuVien.BUS
             string sql = "Update dbo.TAIKHOAN SET MatKhau='" + MatKhau + "' where TenDangNhap = '" + TenDangNhap + "'";
             dataConnect.ExecuteNonQuery(sql);
         }
+
+        public void ResetMatKhau(string TenDangNhap)
+        {
+            string sql = "Update dbo.TAIKHOAN SET MatKhau='123' where TenDangNhap = '" + TenDangNhap + "'";
+            dataConnect.ExecuteNonQuery(sql);
+        }
     }
 }

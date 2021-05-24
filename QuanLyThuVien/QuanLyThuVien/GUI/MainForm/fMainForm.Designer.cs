@@ -49,9 +49,10 @@ namespace QuanLyThuVien.GUI.MainForm
             this.icon_currentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_profile = new FontAwesome.Sharp.IconButton();
             this.btn_logout = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
@@ -59,7 +60,6 @@ namespace QuanLyThuVien.GUI.MainForm
             this.panelStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon_currentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -366,25 +366,13 @@ namespace QuanLyThuVien.GUI.MainForm
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(212)))), ((int)(((byte)(224)))));
-            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Controls.Add(this.label2);
+            this.panelDesktop.Controls.Add(this.label1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 84);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(964, 527);
             this.panelDesktop.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::QuanLyThuVien.Properties.Resources.flashbang;
-            this.pictureBox1.Location = new System.Drawing.Point(220, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(547, 352);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_profile
             // 
@@ -399,7 +387,7 @@ namespace QuanLyThuVien.GUI.MainForm
             this.btn_profile.Name = "btn_profile";
             this.btn_profile.Size = new System.Drawing.Size(181, 34);
             this.btn_profile.TabIndex = 0;
-            this.btn_profile.Text = "Thông tin tài khoản";
+            this.btn_profile.Text = "Đổi mật khẩu";
             this.btn_profile.UseVisualStyleBackColor = false;
             this.btn_profile.Visible = false;
             this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
@@ -422,6 +410,29 @@ namespace QuanLyThuVien.GUI.MainForm
             this.btn_logout.Visible = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(964, 527);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Phần mềm quản lí thư viện";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 514);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(964, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Được nghiên cứu và phát triển bởi CNTT1K13 - Hanoi University of Industry";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,7 +445,9 @@ namespace QuanLyThuVien.GUI.MainForm
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "z";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -444,7 +457,6 @@ namespace QuanLyThuVien.GUI.MainForm
             this.panelStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.icon_currentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,7 +476,6 @@ namespace QuanLyThuVien.GUI.MainForm
         private FontAwesome.Sharp.IconPictureBox icon_currentChildForm;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btn_minimize;
         private FontAwesome.Sharp.IconButton btn_maximize;
         private FontAwesome.Sharp.IconButton btn_exit;
@@ -473,6 +484,8 @@ namespace QuanLyThuVien.GUI.MainForm
         private FontAwesome.Sharp.IconButton IconUser;
         private FontAwesome.Sharp.IconButton btn_profile;
         private FontAwesome.Sharp.IconButton btn_logout;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

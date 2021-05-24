@@ -129,6 +129,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             // 
             this.dgvSachMuon.AllowUserToAddRows = false;
             this.dgvSachMuon.AllowUserToDeleteRows = false;
+            this.dgvSachMuon.AllowUserToResizeColumns = false;
             this.dgvSachMuon.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvSachMuon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -153,6 +154,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.dgvSachMuon.Location = new System.Drawing.Point(29, 221);
             this.dgvSachMuon.MultiSelect = false;
             this.dgvSachMuon.Name = "dgvSachMuon";
+            this.dgvSachMuon.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,7 +163,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSachMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSachMuon.RowHeadersVisible = false;
             this.dgvSachMuon.RowHeadersWidth = 40;
+            this.dgvSachMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSachMuon.Size = new System.Drawing.Size(585, 239);
             this.dgvSachMuon.TabIndex = 22;
             this.dgvSachMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachMuon_CellClick);
@@ -172,6 +176,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.MaS.DataPropertyName = "MaS";
             this.MaS.HeaderText = "Mã sách";
             this.MaS.Name = "MaS";
+            this.MaS.ReadOnly = true;
             this.MaS.Width = 75;
             // 
             // TenS
@@ -180,6 +185,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.TenS.DataPropertyName = "TenS";
             this.TenS.HeaderText = "Tên sách";
             this.TenS.Name = "TenS";
+            this.TenS.ReadOnly = true;
             this.TenS.Width = 325;
             // 
             // GiaMuon
@@ -187,6 +193,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.GiaMuon.DataPropertyName = "GiaMuon";
             this.GiaMuon.HeaderText = "Giá mượn";
             this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
             // 
             // label6
             // 
@@ -194,9 +201,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(107, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Danh mục";
+            this.label6.Text = "Mã - Tên sách";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbb_sach
@@ -221,6 +228,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             // 
             // txt_tongtien
             // 
+            this.txt_tongtien.Enabled = false;
             this.txt_tongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tongtien.Location = new System.Drawing.Point(400, 112);
             this.txt_tongtien.Name = "txt_tongtien";
@@ -328,7 +336,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.Controls.Add(this.txt_nguoimuon);
             this.Controls.Add(this.lbl_chiTietPhieu);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fAddPhieuMuon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAddPhieuMuon";

@@ -53,15 +53,26 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (index < 0)
+            try
             {
-                MessageBox.Show("Vui lòng chọn đối tượng cần xoá!");
+                if (index < 0)
+                {
+                    MessageBox.Show("Vui lòng chọn đối tượng cần xoá!");
+                }
+                else
+                {
+                    if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                    {
+                        new SachBUS().DeleteItem(Int32.Parse(dgvSach.Rows[index].Cells[1].Value.ToString()));
+                        index = -1;
+                        loadData();
+                    }
+                }
+                
             }
-            else
+            catch(Exception ex)
             {
-                new SachBUS().DeleteItem(Int32.Parse(dgvSach.Rows[index].Cells[1].Value.ToString()));
-                index = -1;
-                loadData();
+                MessageBox.Show(ex.Message, "Lỗi");
             }
         }
 

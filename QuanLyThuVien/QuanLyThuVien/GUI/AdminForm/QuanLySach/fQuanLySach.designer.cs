@@ -29,11 +29,12 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.cbb_search = new System.Windows.Forms.ComboBox();
             this.btnDanhMuc = new FontAwesome.Sharp.IconButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.LanXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
@@ -75,6 +75,25 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.panel1.Size = new System.Drawing.Size(963, 56);
             this.panel1.TabIndex = 2;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrint.IconColor = System.Drawing.Color.DimGray;
+            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrint.IconSize = 25;
+            this.btnPrint.Location = new System.Drawing.Point(387, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(85, 35);
+            this.btnPrint.TabIndex = 10;
+            this.btnPrint.Text = "In tất cả";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // cbb_search
             // 
             this.cbb_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,7 +104,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             "Nhà xuất bản",
             "Tên danh mục",
             "Năm xuất bản"});
-            this.cbb_search.Location = new System.Drawing.Point(526, 19);
+            this.cbb_search.Location = new System.Drawing.Point(516, 19);
             this.cbb_search.Name = "cbb_search";
             this.cbb_search.Size = new System.Drawing.Size(98, 21);
             this.cbb_search.TabIndex = 3;
@@ -115,7 +134,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(641, 19);
+            this.txtSearch.Location = new System.Drawing.Point(631, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtSearch.Size = new System.Drawing.Size(229, 23);
@@ -132,11 +151,11 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.btnSearch.IconColor = System.Drawing.Color.DimGray;
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSearch.IconSize = 25;
-            this.btnSearch.Location = new System.Drawing.Point(876, 12);
+            this.btnSearch.Location = new System.Drawing.Point(866, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(81, 35);
+            this.btnSearch.Size = new System.Drawing.Size(91, 35);
             this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -204,21 +223,22 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             // 
             this.dgvSach.AllowUserToAddRows = false;
             this.dgvSach.AllowUserToDeleteRows = false;
+            this.dgvSach.AllowUserToResizeColumns = false;
             this.dgvSach.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSach.BackgroundColor = System.Drawing.Color.White;
             this.dgvSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSach.ColumnHeadersHeight = 40;
             this.dgvSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AnhS,
@@ -231,28 +251,32 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.LanXB,
             this.SoLuong,
             this.GiaMuon});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSach.GridColor = System.Drawing.Color.White;
             this.dgvSach.Location = new System.Drawing.Point(0, 56);
+            this.dgvSach.MultiSelect = false;
             this.dgvSach.Name = "dgvSach";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvSach.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSach.RowHeadersVisible = false;
             this.dgvSach.RowHeadersWidth = 40;
             this.dgvSach.RowTemplate.Height = 100;
+            this.dgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSach.Size = new System.Drawing.Size(963, 669);
             this.dgvSach.TabIndex = 3;
             this.dgvSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellClick);
@@ -264,6 +288,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.AnhS.HeaderText = "Ảnh";
             this.AnhS.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.AnhS.Name = "AnhS";
+            this.AnhS.ReadOnly = true;
             this.AnhS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AnhS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -274,6 +299,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.MaS.FillWeight = 93.72616F;
             this.MaS.HeaderText = "Mã sách";
             this.MaS.Name = "MaS";
+            this.MaS.ReadOnly = true;
             this.MaS.Width = 90;
             // 
             // TenS
@@ -282,6 +308,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.TenS.FillWeight = 101.9272F;
             this.TenS.HeaderText = "Tên sách";
             this.TenS.Name = "TenS";
+            this.TenS.ReadOnly = true;
             // 
             // TacGia
             // 
@@ -289,6 +316,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.TacGia.FillWeight = 101.9272F;
             this.TacGia.HeaderText = "Tác giả";
             this.TacGia.Name = "TacGia";
+            this.TacGia.ReadOnly = true;
             // 
             // TenNXB
             // 
@@ -296,6 +324,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.TenNXB.FillWeight = 101.9272F;
             this.TenNXB.HeaderText = "Tên nhà xuất bản";
             this.TenNXB.Name = "TenNXB";
+            this.TenNXB.ReadOnly = true;
             // 
             // TenDanhMuc
             // 
@@ -303,6 +332,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.TenDanhMuc.FillWeight = 101.9272F;
             this.TenDanhMuc.HeaderText = "Tên danh mục";
             this.TenDanhMuc.Name = "TenDanhMuc";
+            this.TenDanhMuc.ReadOnly = true;
             this.TenDanhMuc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NamXB
@@ -311,6 +341,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.NamXB.FillWeight = 101.9272F;
             this.NamXB.HeaderText = "Năm xuất bản";
             this.NamXB.Name = "NamXB";
+            this.NamXB.ReadOnly = true;
             // 
             // LanXB
             // 
@@ -318,6 +349,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.LanXB.FillWeight = 101.9272F;
             this.LanXB.HeaderText = "Lần xuất bản";
             this.LanXB.Name = "LanXB";
+            this.LanXB.ReadOnly = true;
             // 
             // SoLuong
             // 
@@ -326,6 +358,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.SoLuong.FillWeight = 92.78349F;
             this.SoLuong.HeaderText = "Số lượng";
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             this.SoLuong.Width = 90;
             // 
             // GiaMuon
@@ -334,25 +367,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.GiaMuon.FillWeight = 101.9272F;
             this.GiaMuon.HeaderText = "Giá mượn";
             this.GiaMuon.Name = "GiaMuon";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnPrint.IconColor = System.Drawing.Color.DimGray;
-            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPrint.IconSize = 25;
-            this.btnPrint.Location = new System.Drawing.Point(387, 12);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(85, 35);
-            this.btnPrint.TabIndex = 10;
-            this.btnPrint.Text = "In tất cả";
-            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.GiaMuon.ReadOnly = true;
             // 
             // fQuanLySach
             // 
@@ -362,7 +377,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.Controls.Add(this.dgvSach);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLySach";
-            this.Text = "Danh mục";
+            this.Text = "Quản lý sách";
             this.Load += new System.EventHandler(this.fQuanLySach_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

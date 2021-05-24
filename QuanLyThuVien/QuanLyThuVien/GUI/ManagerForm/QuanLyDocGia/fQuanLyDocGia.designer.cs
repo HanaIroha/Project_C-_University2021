@@ -30,10 +30,12 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbb_search = new System.Windows.Forms.ComboBox();
+            this.btnDeleteHistory = new FontAwesome.Sharp.IconButton();
+            this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.lbl_time = new System.Windows.Forms.Label();
             this.txt_masv = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,17 +43,15 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.label2 = new System.Windows.Forms.Label();
             this.cbb_ngay = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.btnEdit = new FontAwesome.Sharp.IconButton();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
+            this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnDeleteHistory = new FontAwesome.Sharp.IconButton();
-            this.btnPrint = new FontAwesome.Sharp.IconButton();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.btnEdit = new FontAwesome.Sharp.IconButton();
-            this.btnDelete = new FontAwesome.Sharp.IconButton();
-            this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
@@ -87,10 +87,50 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.cbb_search.Items.AddRange(new object[] {
             "Họ và tên",
             "Mã sinh viên"});
-            this.cbb_search.Location = new System.Drawing.Point(526, 19);
+            this.cbb_search.Location = new System.Drawing.Point(516, 19);
             this.cbb_search.Name = "cbb_search";
             this.cbb_search.Size = new System.Drawing.Size(98, 21);
             this.cbb_search.TabIndex = 11;
+            // 
+            // btnDeleteHistory
+            // 
+            this.btnDeleteHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteHistory.FlatAppearance.BorderSize = 0;
+            this.btnDeleteHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteHistory.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDeleteHistory.IconChar = FontAwesome.Sharp.IconChar.CalendarMinus;
+            this.btnDeleteHistory.IconColor = System.Drawing.Color.DimGray;
+            this.btnDeleteHistory.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteHistory.IconSize = 25;
+            this.btnDeleteHistory.Location = new System.Drawing.Point(764, 66);
+            this.btnDeleteHistory.Name = "btnDeleteHistory";
+            this.btnDeleteHistory.Size = new System.Drawing.Size(106, 35);
+            this.btnDeleteHistory.TabIndex = 10;
+            this.btnDeleteHistory.Text = "Xoá lịch sử";
+            this.btnDeleteHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteHistory.UseVisualStyleBackColor = true;
+            this.btnDeleteHistory.Click += new System.EventHandler(this.btnDeleteHistory_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrint.IconColor = System.Drawing.Color.DimGray;
+            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrint.IconSize = 25;
+            this.btnPrint.Location = new System.Drawing.Point(876, 66);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(76, 35);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "In ra";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // lbl_time
             // 
@@ -152,118 +192,11 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(641, 19);
+            this.txtSearch.Location = new System.Drawing.Point(631, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtSearch.Size = new System.Drawing.Size(229, 23);
             this.txtSearch.TabIndex = 1;
-            // 
-            // dgvDanhSach
-            // 
-            this.dgvDanhSach.AllowUserToAddRows = false;
-            this.dgvDanhSach.AllowUserToDeleteRows = false;
-            this.dgvDanhSach.AllowUserToResizeRows = false;
-            this.dgvDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDanhSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvDanhSach.ColumnHeadersHeight = 40;
-            this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ten,
-            this.MaSV,
-            this.ThoiGian});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.2F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSach.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.GridColor = System.Drawing.Color.White;
-            this.dgvDanhSach.Location = new System.Drawing.Point(0, 111);
-            this.dgvDanhSach.MultiSelect = false;
-            this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDanhSach.RowHeadersWidth = 40;
-            this.dgvDanhSach.Size = new System.Drawing.Size(963, 614);
-            this.dgvDanhSach.TabIndex = 3;
-            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "hoTen";
-            this.Ten.HeaderText = "Họ và tên";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            // 
-            // MaSV
-            // 
-            this.MaSV.DataPropertyName = "maSV";
-            this.MaSV.HeaderText = "Mã sinh viên";
-            this.MaSV.Name = "MaSV";
-            this.MaSV.ReadOnly = true;
-            // 
-            // ThoiGian
-            // 
-            this.ThoiGian.DataPropertyName = "thoiGian";
-            this.ThoiGian.HeaderText = "Thời gian đến";
-            this.ThoiGian.Name = "ThoiGian";
-            this.ThoiGian.ReadOnly = true;
-            // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // btnDeleteHistory
-            // 
-            this.btnDeleteHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteHistory.FlatAppearance.BorderSize = 0;
-            this.btnDeleteHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteHistory.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDeleteHistory.IconChar = FontAwesome.Sharp.IconChar.CalendarMinus;
-            this.btnDeleteHistory.IconColor = System.Drawing.Color.DimGray;
-            this.btnDeleteHistory.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDeleteHistory.IconSize = 25;
-            this.btnDeleteHistory.Location = new System.Drawing.Point(764, 66);
-            this.btnDeleteHistory.Name = "btnDeleteHistory";
-            this.btnDeleteHistory.Size = new System.Drawing.Size(106, 35);
-            this.btnDeleteHistory.TabIndex = 10;
-            this.btnDeleteHistory.Text = "Xoá lịch sử";
-            this.btnDeleteHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeleteHistory.UseVisualStyleBackColor = true;
-            this.btnDeleteHistory.Click += new System.EventHandler(this.btnDeleteHistory_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnPrint.IconColor = System.Drawing.Color.DimGray;
-            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPrint.IconSize = 25;
-            this.btnPrint.Location = new System.Drawing.Point(876, 66);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(76, 35);
-            this.btnPrint.TabIndex = 9;
-            this.btnPrint.Text = "In ra";
-            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSearch
             // 
@@ -276,11 +209,11 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.btnSearch.IconColor = System.Drawing.Color.DimGray;
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSearch.IconSize = 25;
-            this.btnSearch.Location = new System.Drawing.Point(876, 12);
+            this.btnSearch.Location = new System.Drawing.Point(866, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(81, 35);
+            this.btnSearch.Size = new System.Drawing.Size(91, 35);
             this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -344,6 +277,76 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // dgvDanhSach
+            // 
+            this.dgvDanhSach.AllowUserToAddRows = false;
+            this.dgvDanhSach.AllowUserToDeleteRows = false;
+            this.dgvDanhSach.AllowUserToResizeColumns = false;
+            this.dgvDanhSach.AllowUserToResizeRows = false;
+            this.dgvDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSach.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvDanhSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvDanhSach.ColumnHeadersHeight = 40;
+            this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ten,
+            this.MaSV,
+            this.ThoiGian});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.2F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSach.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDanhSach.GridColor = System.Drawing.Color.White;
+            this.dgvDanhSach.Location = new System.Drawing.Point(0, 111);
+            this.dgvDanhSach.MultiSelect = false;
+            this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDanhSach.RowHeadersVisible = false;
+            this.dgvDanhSach.RowHeadersWidth = 40;
+            this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDanhSach.Size = new System.Drawing.Size(963, 614);
+            this.dgvDanhSach.TabIndex = 3;
+            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "hoTen";
+            this.Ten.HeaderText = "Họ và tên";
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "maSV";
+            this.MaSV.HeaderText = "Mã sinh viên";
+            this.MaSV.Name = "MaSV";
+            this.MaSV.ReadOnly = true;
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.DataPropertyName = "thoiGian";
+            this.ThoiGian.HeaderText = "Thời gian đến";
+            this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.ReadOnly = true;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // fQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,7 +355,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.Controls.Add(this.dgvDanhSach);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyDocGia";
-            this.Text = "Danh mục";
+            this.Text = "Quản lý độc giả";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();

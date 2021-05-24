@@ -33,12 +33,12 @@ namespace QuanLyThuVien.GUI.AdminForm.ThongKe
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_print = new FontAwesome.Sharp.IconButton();
             this.cbb_year = new System.Windows.Forms.ComboBox();
             this.cbb_month = new System.Windows.Forms.ComboBox();
             this.btnStatistic = new FontAwesome.Sharp.IconButton();
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btn_print = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,26 @@ namespace QuanLyThuVien.GUI.AdminForm.ThongKe
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 56);
             this.panel1.TabIndex = 2;
+            // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_print.FlatAppearance.BorderSize = 0;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_print.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btn_print.IconColor = System.Drawing.Color.DimGray;
+            this.btn_print.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btn_print.IconSize = 25;
+            this.btn_print.Location = new System.Drawing.Point(847, 12);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(104, 35);
+            this.btn_print.TabIndex = 7;
+            this.btn_print.Text = "In ra";
+            this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // cbb_year
             // 
@@ -112,6 +132,7 @@ namespace QuanLyThuVien.GUI.AdminForm.ThongKe
             // 
             this.dgvThongKe.AllowUserToAddRows = false;
             this.dgvThongKe.AllowUserToDeleteRows = false;
+            this.dgvThongKe.AllowUserToResizeColumns = false;
             this.dgvThongKe.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvThongKe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -131,7 +152,9 @@ namespace QuanLyThuVien.GUI.AdminForm.ThongKe
             this.dgvThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongKe.GridColor = System.Drawing.Color.White;
             this.dgvThongKe.Location = new System.Drawing.Point(0, 56);
+            this.dgvThongKe.MultiSelect = false;
             this.dgvThongKe.Name = "dgvThongKe";
+            this.dgvThongKe.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,30 +163,12 @@ namespace QuanLyThuVien.GUI.AdminForm.ThongKe
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvThongKe.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvThongKe.RowHeadersVisible = false;
             this.dgvThongKe.RowHeadersWidth = 40;
             this.dgvThongKe.RowTemplate.Height = 25;
+            this.dgvThongKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThongKe.Size = new System.Drawing.Size(963, 669);
             this.dgvThongKe.TabIndex = 3;
-            // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_print.FlatAppearance.BorderSize = 0;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_print.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btn_print.IconColor = System.Drawing.Color.DimGray;
-            this.btn_print.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btn_print.IconSize = 25;
-            this.btn_print.Location = new System.Drawing.Point(847, 12);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(104, 35);
-            this.btn_print.TabIndex = 7;
-            this.btn_print.Text = "In ra";
-            this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_print.UseVisualStyleBackColor = true;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // fThongKe
             // 

@@ -80,6 +80,8 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
                     dgvDanhSach.DataSource = items;
                 }
             }
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void searchTen()
@@ -176,12 +178,29 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string currentDayChoose = cbb_ngay.SelectedItem.ToString();
-            string ngay = currentDayChoose.Substring(0, 2);
-            string thang = currentDayChoose.Substring(3, 2);
-            string nam = currentDayChoose.Substring(6);
-            addDocGia(txt_hoten.Text, txt_masv.Text, nam + thang + ngay);
-            loadDanhSach();
+            try
+            {
+                if (txt_masv.Text.Equals(""))
+                {
+                    txt_masv.Focus();
+                    throw new Exception("Mã sinh viên không được để trống");
+                }
+                if (txt_hoten.Text.Equals(""))
+                {
+                    txt_hoten.Focus();
+                    throw new Exception("Họ tên không được để trống");
+                }
+                string currentDayChoose = cbb_ngay.SelectedItem.ToString();
+                string ngay = currentDayChoose.Substring(0, 2);
+                string thang = currentDayChoose.Substring(3, 2);
+                string nam = currentDayChoose.Substring(6);
+                addDocGia(txt_hoten.Text, txt_masv.Text, nam + thang + ngay);
+                loadDanhSach();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -240,56 +259,66 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int index = dgvDanhSach.CurrentCell.RowIndex;
-            if (index < 0)
+            try
             {
-                MessageBox.Show("Vui lòng chọn đối tượng cần sửa!");
-            }
-            else
-            {
-                string currentDayChoose = cbb_ngay.SelectedItem.ToString();
-                string ngay = currentDayChoose.Substring(0, 2);
-                string thang = currentDayChoose.Substring(3, 2);
-                string nam = currentDayChoose.Substring(6);
-                if (i == 0)
+                int index = dgvDanhSach.CurrentCell.RowIndex;
+                if (index < 0)
                 {
-                    items.RemoveAt(index);
+                    MessageBox.Show("Vui lòng chọn đối tượng cần sửa!");
                 }
-                else if (i == 1)
+                else
                 {
-                    int realindex = -1;
-                    foreach (var a in items)
+                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
                     {
-                        realindex++;
-                        if (a.hoTen.Contains(txtSearch.Text))
-                            i--;
+                        string currentDayChoose = cbb_ngay.SelectedItem.ToString();
+                        string ngay = currentDayChoose.Substring(0, 2);
+                        string thang = currentDayChoose.Substring(3, 2);
+                        string nam = currentDayChoose.Substring(6);
                         if (i == 0)
-                            break;
-                    }
-                    items.RemoveAt(realindex);
-                }
-                else if (i == 2)
-                {
-                    int realindex = -1;
-                    foreach (var a in items)
-                    {
-                        realindex++;
-                        if (a.maSV.Contains(txtSearch.Text))
-                            i--;
-                        if (i == 0)
-                            break;
-                    }
-                    items.RemoveAt(realindex);
-                }
-                string jsonOut = JsonConvert.SerializeObject(items.ToArray(), Formatting.Indented);
+                        {
+                            items.RemoveAt(index);
+                        }
+                        else if (i == 1)
+                        {
+                            int realindex = -1;
+                            foreach (var a in items)
+                            {
+                                realindex++;
+                                if (a.hoTen.Contains(txtSearch.Text))
+                                    i--;
+                                if (i == 0)
+                                    break;
+                            }
+                            items.RemoveAt(realindex);
+                        }
+                        else if (i == 2)
+                        {
+                            int realindex = -1;
+                            foreach (var a in items)
+                            {
+                                realindex++;
+                                if (a.maSV.Contains(txtSearch.Text))
+                                    i--;
+                                if (i == 0)
+                                    break;
+                            }
+                            items.RemoveAt(realindex);
+                        }
+                        string jsonOut = JsonConvert.SerializeObject(items.ToArray(), Formatting.Indented);
 
-                //write string to file
-                File.WriteAllText(@"LichSuDocGia/" + nam + thang + ngay + ".txt", jsonOut);
-                index = -1;
+                        //write string to file
+                        File.WriteAllText(@"LichSuDocGia/" + nam + thang + ngay + ".txt", jsonOut);
+                        index = -1;
+                    }
+                    txt_hoten.Clear();
+                    txt_masv.Clear();
+                    loadDanhSach();
+                }
             }
-            txt_hoten.Clear();
-            txt_masv.Clear();
-            loadDanhSach();
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)

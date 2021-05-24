@@ -313,7 +313,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             // lbl_image
             // 
             this.lbl_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.lbl_image.Image = global::QuanLyThuVien.Properties.Resources.flashbang;
+            this.lbl_image.Image = global::QuanLyThuVien.Properties.Resources.icon;
             this.lbl_image.Location = new System.Drawing.Point(34, 87);
             this.lbl_image.Name = "lbl_image";
             this.lbl_image.Size = new System.Drawing.Size(150, 150);
@@ -349,7 +349,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.Controls.Add(this.txt_tenSach);
             this.Controls.Add(this.cbb_danhMuc);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fEditSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEditSach";

@@ -64,9 +64,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.cbb_search.FormattingEnabled = true;
             this.cbb_search.Items.AddRange(new object[] {
             "Số phiếu mượn",
-            "Tài khoản lập phiếu",
+            "Tài khoản lập",
             "Mã sinh viên"});
-            this.cbb_search.Location = new System.Drawing.Point(526, 19);
+            this.cbb_search.Location = new System.Drawing.Point(516, 19);
             this.cbb_search.Name = "cbb_search";
             this.cbb_search.Size = new System.Drawing.Size(98, 21);
             this.cbb_search.TabIndex = 4;
@@ -77,7 +77,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(641, 19);
+            this.txtSearch.Location = new System.Drawing.Point(631, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtSearch.Size = new System.Drawing.Size(229, 23);
@@ -94,11 +94,11 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btnSearch.IconColor = System.Drawing.Color.DimGray;
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSearch.IconSize = 25;
-            this.btnSearch.Location = new System.Drawing.Point(876, 12);
+            this.btnSearch.Location = new System.Drawing.Point(866, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(81, 35);
+            this.btnSearch.Size = new System.Drawing.Size(91, 35);
             this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -124,6 +124,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             // 
             // dgvPhieu
             // 
+            this.dgvPhieu.AllowUserToAddRows = false;
+            this.dgvPhieu.AllowUserToDeleteRows = false;
+            this.dgvPhieu.AllowUserToResizeColumns = false;
             this.dgvPhieu.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvPhieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -147,7 +150,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.dgvPhieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieu.GridColor = System.Drawing.Color.White;
             this.dgvPhieu.Location = new System.Drawing.Point(0, 56);
+            this.dgvPhieu.MultiSelect = false;
             this.dgvPhieu.Name = "dgvPhieu";
+            this.dgvPhieu.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,7 +161,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPhieu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPhieu.RowHeadersVisible = false;
             this.dgvPhieu.RowHeadersWidth = 40;
+            this.dgvPhieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieu.Size = new System.Drawing.Size(963, 669);
             this.dgvPhieu.TabIndex = 3;
             this.dgvPhieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieu_CellClick);
@@ -168,6 +175,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.SoPhieuMuon.DataPropertyName = "SoPhieuMuon";
             this.SoPhieuMuon.HeaderText = "Số phiếu mượn";
             this.SoPhieuMuon.Name = "SoPhieuMuon";
+            this.SoPhieuMuon.ReadOnly = true;
             this.SoPhieuMuon.Width = 150;
             // 
             // TenDangNhap
@@ -175,12 +183,14 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.TenDangNhap.DataPropertyName = "TenDangNhap";
             this.TenDangNhap.HeaderText = "Tài khoản lập phiếu";
             this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.ReadOnly = true;
             // 
             // MaSinhVien
             // 
             this.MaSinhVien.DataPropertyName = "MaSinhVien";
             this.MaSinhVien.HeaderText = "Mã sinh viên mượn";
             this.MaSinhVien.Name = "MaSinhVien";
+            this.MaSinhVien.ReadOnly = true;
             // 
             // fQuanLyMuonTra
             // 

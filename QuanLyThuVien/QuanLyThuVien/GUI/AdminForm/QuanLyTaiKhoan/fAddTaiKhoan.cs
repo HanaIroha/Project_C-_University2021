@@ -70,11 +70,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                     txt_TenTaiKhoan.Focus();
                     throw new Exception("Tên đăng nhập không được bỏ trống");
                 }
-                if (txt_MatKhau.Text.Equals(""))
-                {
-                    txt_MatKhau.Focus();
-                    throw new Exception("Mật khẩu không được bỏ trống");
-                }
                 if (txt_TenNguoiDung.Text.Equals(""))
                 {
                     txt_TenNguoiDung.Focus();
@@ -88,7 +83,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 {
                     new TaiKhoanBUS().AddTaiKhoan(new ImageConvert().ConvertImageToBytes(lbl_image.Image),
                         txt_TenTaiKhoan.Text,
-                        txt_MatKhau.Text,
+                        "123",
                         txt_TenNguoiDung.Text,
                         0,
                         rd_KichHoat.Checked ? true : false);

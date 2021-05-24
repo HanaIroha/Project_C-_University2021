@@ -130,19 +130,22 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
         {
             try
             {
-                QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
-                var xoa = from p in db.DANHMUCs
-                          where p.MaDanhMuc == Int32.Parse(dgvDanhMuc.Rows[index].Cells[0].Value.ToString())
-                          select p;
-                foreach (var i in xoa)
+                if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
                 {
-                    db.DANHMUCs.DeleteOnSubmit(i);
-                    db.SubmitChanges();
+                    QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
+                    var xoa = from p in db.DANHMUCs
+                              where p.MaDanhMuc == Int32.Parse(dgvDanhMuc.Rows[index].Cells[0].Value.ToString())
+                              select p;
+                    foreach (var i in xoa)
+                    {
+                        db.DANHMUCs.DeleteOnSubmit(i);
+                        db.SubmitChanges();
+                    }
+                    txt_TenDanhMuc.Clear();
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    loadData();
                 }
-                txt_TenDanhMuc.Clear();
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
-                loadData();
             }
             catch(Exception ex)
             {

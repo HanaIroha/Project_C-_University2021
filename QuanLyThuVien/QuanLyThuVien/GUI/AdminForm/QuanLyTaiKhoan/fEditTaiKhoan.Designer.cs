@@ -33,11 +33,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.txt_TenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TenNguoiDung = new System.Windows.Forms.TextBox();
-            this.txt_MatKhau = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.rd_KichHoat = new System.Windows.Forms.RadioButton();
             this.rd_VoHieuHoa = new System.Windows.Forms.RadioButton();
@@ -45,6 +43,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.btn_cancel = new FontAwesome.Sharp.IconButton();
             this.btn_changeImage = new FontAwesome.Sharp.IconButton();
             this.lbl_image = new System.Windows.Forms.PictureBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,13 +53,14 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm tài khoản";
+            this.label1.Text = "Sửa tài khoản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_TenTaiKhoan
             // 
+            this.txt_TenTaiKhoan.Enabled = false;
             this.txt_TenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenTaiKhoan.Location = new System.Drawing.Point(254, 109);
             this.txt_TenTaiKhoan.Name = "txt_TenTaiKhoan";
@@ -90,17 +90,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label3.Text = "Tên đăng nhập";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(251, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mật khẩu";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -116,7 +105,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(551, 149);
+            this.label7.Location = new System.Drawing.Point(251, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 9;
@@ -131,16 +120,6 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.txt_TenNguoiDung.Size = new System.Drawing.Size(251, 26);
             this.txt_TenNguoiDung.TabIndex = 14;
             // 
-            // txt_MatKhau
-            // 
-            this.txt_MatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MatKhau.Location = new System.Drawing.Point(254, 173);
-            this.txt_MatKhau.Name = "txt_MatKhau";
-            this.txt_MatKhau.ReadOnly = true;
-            this.txt_MatKhau.Size = new System.Drawing.Size(251, 26);
-            this.txt_MatKhau.TabIndex = 15;
-            this.txt_MatKhau.UseSystemPasswordChar = true;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -148,7 +127,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // rd_KichHoat
             // 
             this.rd_KichHoat.AutoSize = true;
-            this.rd_KichHoat.Location = new System.Drawing.Point(554, 179);
+            this.rd_KichHoat.Location = new System.Drawing.Point(254, 186);
             this.rd_KichHoat.Name = "rd_KichHoat";
             this.rd_KichHoat.Size = new System.Drawing.Size(72, 17);
             this.rd_KichHoat.TabIndex = 24;
@@ -159,7 +138,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             // rd_VoHieuHoa
             // 
             this.rd_VoHieuHoa.AutoSize = true;
-            this.rd_VoHieuHoa.Location = new System.Drawing.Point(690, 179);
+            this.rd_VoHieuHoa.Location = new System.Drawing.Point(390, 186);
             this.rd_VoHieuHoa.Name = "rd_VoHieuHoa";
             this.rd_VoHieuHoa.Size = new System.Drawing.Size(82, 17);
             this.rd_VoHieuHoa.TabIndex = 25;
@@ -235,32 +214,50 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.lbl_image.TabIndex = 13;
             this.lbl_image.TabStop = false;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton1.IconColor = System.Drawing.Color.DimGray;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 35;
+            this.iconButton1.Location = new System.Drawing.Point(281, 276);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(191, 34);
+            this.iconButton1.TabIndex = 26;
+            this.iconButton1.Text = "Khôi phục mật khẩu";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // fEditTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(212)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(838, 346);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.rd_VoHieuHoa);
             this.Controls.Add(this.rd_KichHoat);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_changeImage);
-            this.Controls.Add(this.txt_MatKhau);
             this.Controls.Add(this.txt_TenNguoiDung);
             this.Controls.Add(this.lbl_image);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_TenTaiKhoan);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "fEditTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fAddSach";
+            this.Text = "fEditTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.lbl_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,17 +270,16 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
         private System.Windows.Forms.TextBox txt_TenTaiKhoan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox lbl_image;
         private System.Windows.Forms.TextBox txt_TenNguoiDung;
-        private System.Windows.Forms.TextBox txt_MatKhau;
         private FontAwesome.Sharp.IconButton btn_changeImage;
         private FontAwesome.Sharp.IconButton btn_cancel;
         private FontAwesome.Sharp.IconButton btn_save;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.RadioButton rd_KichHoat;
         private System.Windows.Forms.RadioButton rd_VoHieuHoa;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
