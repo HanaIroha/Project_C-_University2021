@@ -70,7 +70,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 }
                 else
                 {
-                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá tài khoản "+ dgvTaiKhoan.Rows[index].Cells[1].Value.ToString() + " không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá tài khoản "+ dgvTaiKhoan.Rows[index].Cells[1].Value.ToString() + " không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK)
                     {
                         new TaiKhoanBUS().DeleteTaiKhoan(dgvTaiKhoan.Rows[index].Cells[1].Value.ToString());
                         index = -1;

@@ -61,7 +61,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                 }
                 else
                 {
-                    if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                    if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK)
                     {
                         new SachBUS().DeleteItem(Int32.Parse(dgvSach.Rows[index].Cells[1].Value.ToString()));
                         index = -1;

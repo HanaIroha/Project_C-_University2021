@@ -52,9 +52,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(131, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm tài khoản";
+            this.label1.Text = "Đổi mật khẩu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_TenTaiKhoan

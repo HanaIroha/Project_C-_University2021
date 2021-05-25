@@ -29,3 +29,4 @@ C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.MainForm.fLogin.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.MainForm.fMainForm.resources
 C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
+C:\Users\Iroha\Desktop\Project_CSharp_University2021\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GUI.MainForm.WelcomeForm.resources

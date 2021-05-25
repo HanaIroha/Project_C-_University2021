@@ -51,6 +51,8 @@ namespace QuanLyThuVien.BUS
             string sql = "Select * from dbo.TAIKHOAN where TenDangNhap = '" + TenTK + "' AND MatKhau = '"+ MatKhau + "' AND TinhTrang = '1'";
             DataTable dt = new DataTable();
             dt = dataConnect.GetTable(sql);
+            if (dt == null)
+                return false;
             return dt.Rows.Count > 0 ? true : false;
         }
 

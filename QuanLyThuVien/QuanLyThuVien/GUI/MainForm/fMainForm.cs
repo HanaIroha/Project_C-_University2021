@@ -61,6 +61,8 @@ namespace QuanLyThuVien.GUI.MainForm
                 btn_quanLyTaiKhoan.Visible = false;
                 btn_thongKe.Visible = false;
             }
+            OpenChildForm(new WelcomeForm());
+            lbl_currentChildForm.Text = "Home";
         }
 
         private void OpenChildForm(Form childForm)
@@ -167,11 +169,8 @@ namespace QuanLyThuVien.GUI.MainForm
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            Reset();
+            OpenChildForm(new WelcomeForm());
+            lbl_currentChildForm.Text = "Home";
         }
 
         private void Reset()

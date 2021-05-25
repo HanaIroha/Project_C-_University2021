@@ -130,7 +130,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
         {
             try
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK)
                 {
                     QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
                     var xoa = from p in db.DANHMUCs

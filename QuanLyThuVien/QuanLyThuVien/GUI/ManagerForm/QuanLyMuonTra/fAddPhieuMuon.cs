@@ -43,33 +43,76 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             cbb_sach.DataSource = s;
             cbb_sach.DisplayMember = "Ten";
             cbb_sach.ValueMember = "MaS";
+            cbb_sach.SelectedIndex = -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
-                var s = (from p in db.SACHes
-                         where p.MaS == Int32.Parse(cbb_sach.SelectedValue.ToString())
-                         select new { p.MaS, p.TenS, p.GiaMuon, p.SoLuong }).FirstOrDefault();
-                int slThuc = Int32.Parse(txt_sl.Text);
-                if (dgvSachMuon.Rows.Count > 0)
+                if (cbb_sach.Text.Contains("-"))
                 {
-                    for(int z = 0; z<dgvSachMuon.Rows.Count; z++)
+                    QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
+                    var s = (from p in db.SACHes
+                             where p.MaS == Int32.Parse(cbb_sach.SelectedValue.ToString())
+                             select new { p.MaS, p.TenS, p.GiaMuon, p.SoLuong }).FirstOrDefault();
+                    int slThuc = Int32.Parse(txt_sl.Text);
+                    if (dgvSachMuon.Rows.Count > 0)
                     {
-                        if (dgvSachMuon.Rows[z].Cells[0].Value.ToString().Equals(cbb_sach.SelectedValue.ToString()))
-                            slThuc++;
+                        for (int z = 0; z < dgvSachMuon.Rows.Count; z++)
+                        {
+                            if (dgvSachMuon.Rows[z].Cells[0].Value.ToString().Equals(cbb_sach.SelectedValue.ToString()))
+                                slThuc++;
+                        }
+                    }
+                    if (s.SoLuong < slThuc)
+                    {
+                        throw new Exception("Không đủ sách để cho mượn!");
+                    }
+                    for (int i = 0; i < Int32.Parse(txt_sl.Text); i++)
+                    {
+                        dgvSachMuon.Rows.Add(s.MaS, s.TenS, s.GiaMuon);
+                        txt_tongtien.Text = (Int32.Parse(txt_tongtien.Text) + s.GiaMuon).ToString();
                     }
                 }
-                if (s.SoLuong < slThuc)
+                else
                 {
-                    throw new Exception("Không đủ sách để cho mượn!");
-                }
-                for (int i = 0; i < Int32.Parse(txt_sl.Text); i++)
-                {
-                    dgvSachMuon.Rows.Add(s.MaS, s.TenS, s.GiaMuon);
-                    txt_tongtien.Text = (Int32.Parse(txt_tongtien.Text) + s.GiaMuon).ToString();
+                    if (cbb_sach.Text.Equals(""))
+                    {
+                        cbb_sach.Focus();
+                        throw new Exception("Vui lòng nhập mã sách");
+                    }
+                    if (!cbb_sach.Text.All(char.IsDigit))
+                    {
+                        cbb_sach.Focus();
+                        throw new Exception("Mã sách phải là số");
+                    }
+                    QuanLyThuVienDataContext db = new QuanLyThuVienDataContext();
+                    var s = (from p in db.SACHes
+                             where p.MaS == Int32.Parse(cbb_sach.Text)
+                             select new { p.MaS, p.TenS, p.GiaMuon, p.SoLuong }).FirstOrDefault();
+                    if (s == null)
+                    {
+                        throw new Exception("Mã sách không tồn tại");
+                    }
+                    int slThuc = Int32.Parse(txt_sl.Text);
+                    if (dgvSachMuon.Rows.Count > 0)
+                    {
+                        for (int z = 0; z < dgvSachMuon.Rows.Count; z++)
+                        {
+                            if (dgvSachMuon.Rows[z].Cells[0].Value.ToString().Equals(cbb_sach.Text))
+                                slThuc++;
+                        }
+                    }
+                    if (s.SoLuong < slThuc)
+                    {
+                        throw new Exception("Không đủ sách để cho mượn!");
+                    }
+                    for (int i = 0; i < Int32.Parse(txt_sl.Text); i++)
+                    {
+                        dgvSachMuon.Rows.Add(s.MaS, s.TenS, s.GiaMuon);
+                        txt_tongtien.Text = (Int32.Parse(txt_tongtien.Text) + s.GiaMuon).ToString();
+                    }
                 }
             }
             catch(Exception ex)

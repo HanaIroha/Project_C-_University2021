@@ -268,7 +268,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
                 }
                 else
                 {
-                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
+                    if(MessageBox.Show("Bạn có chắc chắn muốn xoá không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK)
                     {
                         string currentDayChoose = cbb_ngay.SelectedItem.ToString();
                         string ngay = currentDayChoose.Substring(0, 2);
