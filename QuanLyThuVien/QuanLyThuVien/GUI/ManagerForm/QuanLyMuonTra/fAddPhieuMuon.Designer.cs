@@ -29,9 +29,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_chiTietPhieu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,9 +39,6 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.txt_sl = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvSachMuon = new System.Windows.Forms.DataGridView();
-            this.MaS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.cbb_sach = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +47,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btn_cancel = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.MaS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).BeginInit();
             this.SuspendLayout();
@@ -131,8 +131,8 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.dgvSachMuon.AllowUserToDeleteRows = false;
             this.dgvSachMuon.AllowUserToResizeColumns = false;
             this.dgvSachMuon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvSachMuon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvSachMuon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSachMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSachMuon.BackgroundColor = System.Drawing.Color.White;
             this.dgvSachMuon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -142,58 +142,33 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.MaS,
             this.TenS,
             this.GiaMuon});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.2F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSachMuon.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.2F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSachMuon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSachMuon.GridColor = System.Drawing.Color.White;
             this.dgvSachMuon.Location = new System.Drawing.Point(29, 221);
             this.dgvSachMuon.MultiSelect = false;
             this.dgvSachMuon.Name = "dgvSachMuon";
             this.dgvSachMuon.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSachMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSachMuon.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSachMuon.RowHeadersVisible = false;
             this.dgvSachMuon.RowHeadersWidth = 40;
             this.dgvSachMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSachMuon.Size = new System.Drawing.Size(585, 239);
             this.dgvSachMuon.TabIndex = 22;
             this.dgvSachMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachMuon_CellClick);
-            // 
-            // MaS
-            // 
-            this.MaS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MaS.DataPropertyName = "MaS";
-            this.MaS.HeaderText = "Mã sách";
-            this.MaS.Name = "MaS";
-            this.MaS.ReadOnly = true;
-            this.MaS.Width = 75;
-            // 
-            // TenS
-            // 
-            this.TenS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.TenS.DataPropertyName = "TenS";
-            this.TenS.HeaderText = "Tên sách";
-            this.TenS.Name = "TenS";
-            this.TenS.ReadOnly = true;
-            this.TenS.Width = 325;
-            // 
-            // GiaMuon
-            // 
-            this.GiaMuon.DataPropertyName = "GiaMuon";
-            this.GiaMuon.HeaderText = "Giá mượn";
-            this.GiaMuon.Name = "GiaMuon";
-            this.GiaMuon.ReadOnly = true;
             // 
             // label6
             // 
@@ -221,9 +196,9 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(397, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Tổng tiền";
+            this.label3.Text = "Tổng tiền (VNĐ)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_tongtien
@@ -314,6 +289,31 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // MaS
+            // 
+            this.MaS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MaS.DataPropertyName = "MaS";
+            this.MaS.HeaderText = "Mã sách";
+            this.MaS.Name = "MaS";
+            this.MaS.ReadOnly = true;
+            this.MaS.Width = 75;
+            // 
+            // TenS
+            // 
+            this.TenS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TenS.DataPropertyName = "TenS";
+            this.TenS.HeaderText = "Tên sách";
+            this.TenS.Name = "TenS";
+            this.TenS.ReadOnly = true;
+            this.TenS.Width = 325;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.DataPropertyName = "GiaMuon";
+            this.GiaMuon.HeaderText = "Giá mượn (VNĐ)";
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
             // 
             // fAddPhieuMuon
             // 

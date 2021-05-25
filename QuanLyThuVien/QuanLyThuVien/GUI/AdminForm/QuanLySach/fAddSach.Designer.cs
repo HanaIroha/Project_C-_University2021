@@ -192,9 +192,9 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(554, 252);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 16);
+            this.label10.Size = new System.Drawing.Size(104, 16);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Giá mượn";
+            this.label10.Text = "Giá mượn (VNĐ)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_tacGia

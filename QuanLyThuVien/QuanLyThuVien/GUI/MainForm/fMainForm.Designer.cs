@@ -49,10 +49,10 @@ namespace QuanLyThuVien.GUI.MainForm
             this.icon_currentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_profile = new FontAwesome.Sharp.IconButton();
             this.btn_logout = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
@@ -374,6 +374,29 @@ namespace QuanLyThuVien.GUI.MainForm
             this.panelDesktop.Size = new System.Drawing.Size(964, 527);
             this.panelDesktop.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 502);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(964, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Được nghiên cứu và phát triển bởi CNTT1K13 - Hanoi University of Industry";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(964, 527);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Phần mềm quản lí thư viện";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btn_profile
             // 
             this.btn_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -409,29 +432,6 @@ namespace QuanLyThuVien.GUI.MainForm
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Visible = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(964, 527);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phần mềm quản lí thư viện";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 514);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(964, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Được nghiên cứu và phát triển bởi CNTT1K13 - Hanoi University of Industry";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fMainForm
             // 
