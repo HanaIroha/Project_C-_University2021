@@ -14,50 +14,43 @@
         <elementListCompartment Id="5bd547b1-27f2-416f-8685-1041c7156969" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2b2baeb1-5a1f-47ee-9ce8-7a8ac3a6bd71" absoluteBounds="5.75, 0.625, 2, 2.7324039713541666">
+    <classShape Id="2b2baeb1-5a1f-47ee-9ce8-7a8ac3a6bd71" absoluteBounds="7.125, 0.625, 2, 2.7324039713541666">
       <DataClassMoniker Name="/QuanLyThuVienDataContext/SACH" />
       <nestedChildShapes>
-        <elementListCompartment Id="6d85c9e1-0a24-47da-a0cb-915e891c4510" absoluteBounds="5.765, 1.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6d85c9e1-0a24-47da-a0cb-915e891c4510" absoluteBounds="7.14, 1.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.6875 : 4.375); (2.6875 : 0.65625); (5.75 : 0.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.90625 : 4.375); (2.90625 : 0.65625); (7.125 : 0.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyThuVienDataContext/DANHMUC/DANHMUC_SACH" />
       <nodes>
         <classShapeMoniker Id="ed4aaabf-7a1c-4aed-9b57-793b7dd5a98e" />
         <classShapeMoniker Id="2b2baeb1-5a1f-47ee-9ce8-7a8ac3a6bd71" />
       </nodes>
     </associationConnector>
-    <classShape Id="d3846185-7d85-4da6-bd4a-970dd367aaa7" absoluteBounds="5.125, 4.5, 2, 1.3862939453125">
-      <DataClassMoniker Name="/QuanLyThuVienDataContext/PHIEUMUON" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ec74ddb2-29a2-4233-b4ce-a893c70990c1" absoluteBounds="5.14, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(0.84375 : 2.7131982421875); (0.84375 : 5.75889322916667); (5.125 : 5.75889322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QuanLyThuVienDataContext/TAIKHOAN/TAIKHOAN_PHIEUMUON" />
-      <nodes>
-        <classShapeMoniker Id="946cdd7f-d8fe-4d07-b7cd-16c6aa6ca088" />
-        <classShapeMoniker Id="d3846185-7d85-4da6-bd4a-970dd367aaa7" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="fd8facb6-7f82-400f-a608-e1993f9e619c" absoluteBounds="2.875, 1.875, 2, 1.9631982421875">
+    <classShape Id="bb7dfbf0-d0a4-4f89-b7a4-2b633933762c" absoluteBounds="4.125, 1.875, 2, 1.9631982421875">
       <DataClassMoniker Name="/QuanLyThuVienDataContext/CHITIETPHIEUMUON" />
       <nestedChildShapes>
-        <elementListCompartment Id="3a389193-c466-4722-8812-de075a9a0618" absoluteBounds="2.89, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="652b9c27-3641-49ff-802b-61aeba24a693" absoluteBounds="4.14, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.125 : 4.5); (4.875 : 3.8381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/QuanLyThuVienDataContext/PHIEUMUON/PHIEUMUON_CHITIETPHIEUMUON" />
-      <nodes>
-        <classShapeMoniker Id="d3846185-7d85-4da6-bd4a-970dd367aaa7" />
-        <classShapeMoniker Id="fd8facb6-7f82-400f-a608-e1993f9e619c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 2.61620198567708); (4.875 : 2.61620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.125 : 2.61620198567708); (6.125 : 2.61620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyThuVienDataContext/SACH/SACH_CHITIETPHIEUMUON" />
       <nodes>
         <classShapeMoniker Id="2b2baeb1-5a1f-47ee-9ce8-7a8ac3a6bd71" />
-        <classShapeMoniker Id="fd8facb6-7f82-400f-a608-e1993f9e619c" />
+        <classShapeMoniker Id="bb7dfbf0-d0a4-4f89-b7a4-2b633933762c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6415125e-ff75-44e4-b550-2fa5f1546ece" absoluteBounds="5.125, 5.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QuanLyThuVienDataContext/PHIEUMUON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e58d0f68-4a1e-4d34-adfe-7de5e06b2681" absoluteBounds="5.14, 5.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 5.125); (5.625 : 3.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyThuVienDataContext/PHIEUMUON/PHIEUMUON_CHITIETPHIEUMUON" />
+      <nodes>
+        <classShapeMoniker Id="6415125e-ff75-44e4-b550-2fa5f1546ece" />
+        <classShapeMoniker Id="bb7dfbf0-d0a4-4f89-b7a4-2b633933762c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

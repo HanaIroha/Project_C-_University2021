@@ -15,7 +15,6 @@
       <Column Name="TenNguoiDung" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="LoaiTaiKhoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TAIKHOAN_PHIEUMUON" Member="PHIEUMUONs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="PHIEUMUON" />
     </Type>
   </Table>
   <Table Name="dbo.SACH" Member="SACHes">
@@ -34,15 +33,6 @@
       <Association Name="DANHMUC_SACH" Member="DANHMUC" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DANHMUC" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
-  <Table Name="dbo.PHIEUMUON" Member="PHIEUMUONs">
-    <Type Name="PHIEUMUON">
-      <Column Name="SoPhieuMuon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MaSinhVien" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="PHIEUMUON_CHITIETPHIEUMUON" Member="CHITIETPHIEUMUONs" ThisKey="SoPhieuMuon" OtherKey="SoPhieuMuon" Type="CHITIETPHIEUMUON" />
-      <Association Name="TAIKHOAN_PHIEUMUON" Member="TAIKHOAN" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="TAIKHOAN" IsForeignKey="true" DeleteRule="CASCADE" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHITIETPHIEUMUON" Member="CHITIETPHIEUMUONs">
     <Type Name="CHITIETPHIEUMUON">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -51,8 +41,16 @@
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NgayTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="PHIEUMUON_CHITIETPHIEUMUON" Member="PHIEUMUON" ThisKey="SoPhieuMuon" OtherKey="SoPhieuMuon" Type="PHIEUMUON" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="SACH_CHITIETPHIEUMUON" Member="SACH" ThisKey="MaS" OtherKey="MaS" Type="SACH" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PHIEUMUON_CHITIETPHIEUMUON" Member="PHIEUMUON" ThisKey="SoPhieuMuon" OtherKey="SoPhieuMuon" Type="PHIEUMUON" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUMUON" Member="PHIEUMUONs">
+    <Type Name="PHIEUMUON">
+      <Column Name="SoPhieuMuon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MaSinhVien" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="PHIEUMUON_CHITIETPHIEUMUON" Member="CHITIETPHIEUMUONs" ThisKey="SoPhieuMuon" OtherKey="SoPhieuMuon" Type="CHITIETPHIEUMUON" />
     </Type>
   </Table>
 </Database>
