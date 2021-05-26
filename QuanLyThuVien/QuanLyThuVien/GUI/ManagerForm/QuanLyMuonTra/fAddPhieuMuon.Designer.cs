@@ -39,17 +39,19 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.txt_sl = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvSachMuon = new System.Windows.Forms.DataGridView();
+            this.MaS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.cbb_sach = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnPrint = new FontAwesome.Sharp.IconButton();
             this.btn_save = new FontAwesome.Sharp.IconButton();
             this.btn_cancel = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
-            this.MaS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).BeginInit();
             this.SuspendLayout();
@@ -170,6 +172,31 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.dgvSachMuon.TabIndex = 22;
             this.dgvSachMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachMuon_CellClick);
             // 
+            // MaS
+            // 
+            this.MaS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MaS.DataPropertyName = "MaS";
+            this.MaS.HeaderText = "Mã sách";
+            this.MaS.Name = "MaS";
+            this.MaS.ReadOnly = true;
+            this.MaS.Width = 75;
+            // 
+            // TenS
+            // 
+            this.TenS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TenS.DataPropertyName = "TenS";
+            this.TenS.HeaderText = "Tên sách";
+            this.TenS.Name = "TenS";
+            this.TenS.ReadOnly = true;
+            this.TenS.Width = 325;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.DataPropertyName = "GiaMuon";
+            this.GiaMuon.HeaderText = "Giá mượn (VNĐ)";
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -212,6 +239,25 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.txt_tongtien.TabIndex = 27;
             this.txt_tongtien.Text = "0";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrint.IconColor = System.Drawing.Color.DimGray;
+            this.btnPrint.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPrint.IconSize = 35;
+            this.btnPrint.Location = new System.Drawing.Point(108, 479);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(116, 40);
+            this.btnPrint.TabIndex = 31;
+            this.btnPrint.Text = "In phiếu";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btn_save
             // 
             this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
@@ -222,7 +268,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btn_save.IconColor = System.Drawing.Color.DimGray;
             this.btn_save.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_save.IconSize = 35;
-            this.btn_save.Location = new System.Drawing.Point(189, 477);
+            this.btn_save.Location = new System.Drawing.Point(268, 479);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(116, 40);
             this.btn_save.TabIndex = 30;
@@ -241,7 +287,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btn_cancel.IconColor = System.Drawing.Color.DimGray;
             this.btn_cancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_cancel.IconSize = 35;
-            this.btn_cancel.Location = new System.Drawing.Point(353, 477);
+            this.btn_cancel.Location = new System.Drawing.Point(432, 479);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(116, 40);
             this.btn_cancel.TabIndex = 29;
@@ -290,37 +336,13 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // MaS
-            // 
-            this.MaS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MaS.DataPropertyName = "MaS";
-            this.MaS.HeaderText = "Mã sách";
-            this.MaS.Name = "MaS";
-            this.MaS.ReadOnly = true;
-            this.MaS.Width = 75;
-            // 
-            // TenS
-            // 
-            this.TenS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.TenS.DataPropertyName = "TenS";
-            this.TenS.HeaderText = "Tên sách";
-            this.TenS.Name = "TenS";
-            this.TenS.ReadOnly = true;
-            this.TenS.Width = 325;
-            // 
-            // GiaMuon
-            // 
-            this.GiaMuon.DataPropertyName = "GiaMuon";
-            this.GiaMuon.HeaderText = "Giá mượn (VNĐ)";
-            this.GiaMuon.Name = "GiaMuon";
-            this.GiaMuon.ReadOnly = true;
-            // 
             // fAddPhieuMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(212)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(643, 531);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.label3);
@@ -367,5 +389,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
         private System.Windows.Forms.DataGridViewTextBoxColumn MaS;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenS;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaMuon;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private FontAwesome.Sharp.IconButton btnPrint;
     }
 }

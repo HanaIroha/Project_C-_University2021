@@ -53,6 +53,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
             this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.SuspendLayout();
@@ -385,5 +386,6 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyDocGia
         private FontAwesome.Sharp.IconButton btnDeleteHistory;
         private System.Windows.Forms.ComboBox cbb_search;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

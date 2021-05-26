@@ -214,5 +214,38 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
                 e.Handled = true;
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            DateTime localDate = DateTime.Now;
+            string currentDate = localDate.Date.ToString(new CultureInfo("en-GB")).Split(' ')[0];
+            string ngay = currentDate.Substring(0, 2);
+            string thang = currentDate.Substring(3, 2);
+            string nam = currentDate.Substring(6);
+            string NgayMuon = thang + "/" + ngay + "/" + nam;
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("AnhS");
+            dt.Columns.Add("GiaMuon");
+            dt.Columns.Add("LanXB");
+            dt.Columns.Add("MaDanhMuc");
+            dt.Columns.Add("MaS");
+            dt.Columns.Add("NamXB");
+            dt.Columns.Add("SoLuong");
+            dt.Columns.Add("TacGia");
+            dt.Columns.Add("TenNXB");
+            dt.Columns.Add("TenS");
+            for(int i=0; i< dgvSachMuon.Rows.Count; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["MaS"] = dgvSachMuon.Rows[i].Cells[0].Value.ToString();
+                dr["TenS"] = dgvSachMuon.Rows[i].Cells[1].Value.ToString();
+                dr["GiaMuon"] = dgvSachMuon.Rows[i].Cells[2].Value.ToString();
+                dt.Rows.Add(dr);
+            }
+            ds.Tables.Add(dt);
+            BillViewer f = new BillViewer(ds, txt_nguoimuon.Text, lbl_chiTietPhieu.Text.Split('#')[1], txt_tongtien.Text, NgayMuon, tenDangNhap);
+            f.ShowDialog();
+        }
     }
 }
