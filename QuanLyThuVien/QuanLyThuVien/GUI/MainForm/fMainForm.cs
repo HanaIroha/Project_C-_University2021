@@ -152,7 +152,7 @@ namespace QuanLyThuVien.GUI.MainForm
         private void btn_quanLyMuonTra_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new fQuanLyMuonTra());
+            OpenChildForm(new fQuanLyMuonTra(tk.TenDangNhap));
         }
 
         private void btn_thongKe_Click(object sender, EventArgs e)

@@ -15,9 +15,11 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
     public partial class fQuanLyMuonTra : Form
     {
         int index = -1;
-        public fQuanLyMuonTra()
+        string tenDN;
+        public fQuanLyMuonTra(string TenDangNhap)
         {
             InitializeComponent();
+            tenDN = TenDangNhap;
         }
 
         private void fQuanLyMuonTra_Load(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            fAddPhieuMuon f = new fAddPhieuMuon(this,"nhanvien1");
+            fAddPhieuMuon f = new fAddPhieuMuon(this, tenDN);
             f.ShowDialog();
         }
         public void hienthi()
