@@ -124,6 +124,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                 sach.AnhS = new ImageConvert().ConvertImageToBytes(lbl_image.Image);
                 db.SubmitChanges();
                 QuanLySach.loadData();
+                MessageBox.Show("Sửa sách thành công!");
                 this.Dispose();
             }
             catch (Exception ex)

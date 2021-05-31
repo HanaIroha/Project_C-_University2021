@@ -55,7 +55,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                     txt_matKhauMoi.Focus();
                     throw new Exception("Mật khẩu mới không được bỏ trống");
                 }
-                if (tk.MatKhau.Equals(txt_MatKhau.Text))
+                if (!new TaiKhoanBUS().CheckDangNhap(TenTK, txt_MatKhau.Text))
                 {
                     txt_MatKhau.Focus();
                     throw new Exception("Mật khẩu cũ không đúng!");
@@ -63,6 +63,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                 else
                 {
                     new TaiKhoanBUS().UpdateMatKhau(txt_TenTaiKhoan.Text, txt_matKhauMoi.Text);
+                    MessageBox.Show("Đổi mật khẩu thành công!");
                     this.Dispose();
                 }
             }

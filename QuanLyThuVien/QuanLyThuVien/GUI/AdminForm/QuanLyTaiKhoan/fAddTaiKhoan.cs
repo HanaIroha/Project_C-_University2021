@@ -88,6 +88,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLyTaiKhoan
                         0,
                         rd_KichHoat.Checked ? true : false);
                     QuanLyTaiKhoan.prepare();
+                    MessageBox.Show("Thêm tài khoản thành công!");
                     this.Dispose();
                 }
             }

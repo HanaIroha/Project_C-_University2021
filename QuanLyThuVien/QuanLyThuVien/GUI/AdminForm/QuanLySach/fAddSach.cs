@@ -131,6 +131,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
                     //    new ImageConvert().ConvertImageToBytes(lbl_image.Image)
                     //    );
                     QuanLySach.loadData();
+                    MessageBox.Show("Thêm sách thành công!");
                     this.Dispose();
                 }
             }
