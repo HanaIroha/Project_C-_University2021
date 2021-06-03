@@ -31,7 +31,7 @@ namespace QuanLyThuVien.GUI.ManagerForm.QuanLyMuonTra
                      orderby p.SoPhieuMuon descending
                     select p).FirstOrDefault();
             
-            lbl_chiTietPhieu.Text = "Thông tin chi tiết phiếu mượn #" + (s==null?1:s.SoPhieuMuon);
+            lbl_chiTietPhieu.Text = "Thông tin chi tiết phiếu mượn #" + (s==null?1:s.SoPhieuMuon+1);
             loadComBoSach();
         }
         

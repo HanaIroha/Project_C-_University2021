@@ -48,7 +48,11 @@ namespace QuanLyThuVien.GUI.MainForm
             {
                 string username = txtAccount.Text;
                 string password = txtPassword.Text;
-                if (!new TaiKhoanBUS().CheckDangNhap(txtAccount.Text, txtPassword.Text))
+                if (new TaiKhoanBUS().CheckVoHH(txtAccount.Text, txtPassword.Text))
+                {
+                    MessageBox.Show("Tài khoản bị vô hiệu hóa!");
+                }
+                else if (!new TaiKhoanBUS().CheckDangNhap(txtAccount.Text, txtPassword.Text))
                 {
                     MessageBox.Show("Tài khoản hoặc mật khẩu không tồn tại!");
                 }

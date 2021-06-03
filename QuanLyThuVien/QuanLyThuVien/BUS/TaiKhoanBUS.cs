@@ -56,6 +56,16 @@ namespace QuanLyThuVien.BUS
             return dt.Rows.Count > 0 ? true : false;
         }
 
+        public bool CheckVoHH(string TenTK, string MatKhau)
+        {
+            string sql = "Select * from dbo.TAIKHOAN where TenDangNhap = '" + TenTK + "' AND MatKhau = '" + MatKhau + "' AND TinhTrang = '0'";
+            DataTable dt = new DataTable();
+            dt = dataConnect.GetTable(sql);
+            if (dt == null)
+                return false;
+            return dt.Rows.Count > 0 ? true : false;
+        }
+
         public void AddTaiKhoan(byte[] AnhDaiDien, string TenDanhNhap, string MatKhau, string TenNguoiDung, int LoaiTaiKhoan, bool TinhTrang)
         {
             string sql = "Insert into dbo.TAIKHOAN values(@image,'" + TenDanhNhap + "','" + MatKhau + "',N'" + TenNguoiDung + "','" + LoaiTaiKhoan + "','" + TinhTrang + "')";
