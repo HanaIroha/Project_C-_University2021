@@ -48,7 +48,7 @@ namespace QuanLyThuVien
     #endregion
 		
 		public QuanLyThuVienDataContext() : 
-				base(global::QuanLyThuVien.Properties.Settings.Default.QLThuVienWindowsConnectionString1, mappingSource)
+				base(global::QuanLyThuVien.Properties.Settings.Default.QLThuVienWindowsConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

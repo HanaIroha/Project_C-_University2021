@@ -13,7 +13,7 @@ namespace QuanLyThuVien.DAL
     {
         public SqlConnection GetConnection()
         {
-            return new SqlConnection(@"Data Source=HAIKHANH\SQLEXPRESS;Initial Catalog=QLThuVienWindows;Integrated Security=True");
+            return new SqlConnection(@"Data Source=IROHAPC;Initial Catalog=QLThuVienWindows;Integrated Security=True");
         }
         public DataTable GetTable(String sql)
         {
