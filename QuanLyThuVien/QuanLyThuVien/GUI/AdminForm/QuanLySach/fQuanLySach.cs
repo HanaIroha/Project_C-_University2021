@@ -95,6 +95,7 @@ namespace QuanLyThuVien.GUI.AdminForm.QuanLySach
         {
             fDanhMuc f = new fDanhMuc();
             f.ShowDialog();
+            loadData();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
