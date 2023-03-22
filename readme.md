@@ -1,1 +1,2 @@
-Test changing file
+HanaIroha-patch-1
+Test changing file.
